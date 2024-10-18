@@ -54,7 +54,7 @@
 
 
 .colortop {
-    background-color: red;
+    background-color: rgb(229,62, 62);
     padding-bottom: 20px;
     margin-top: -10px;
     margin-left: -10px;
@@ -62,7 +62,7 @@
 }
 
 .colorbot {
-    background-color: darkgreen;
+    background-color: rgb(63,181, 122);
     padding-bottom: 12px;
     margin-left: -10px;
     margin-right: -10px;
@@ -113,4 +113,29 @@
     border-radius: 10px; 
     position: relative;
     z-index: 1; 
+}
+
+section {
+    text-align: center;
+    background-color: rgb(63,181, 122);
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: -38px;
+    margin-left: -9px;
+    margin-right: -10px;
+}
+
+.loc {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+footer {
+    background-color: rgb(229,62, 62);
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: -15px;
+    text-align: center;
+    font-size: 20px;
+
 }
