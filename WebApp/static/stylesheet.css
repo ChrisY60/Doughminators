@@ -2,9 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica+SC&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
+
+header {
+    background-color: white;
+}
+
+#homes {
+    background-color: white;
+}
 body {
     margin:0;
     font-family: 'IM Fell DW Pica SC', serif;
+    background-color: rgb(255, 239, 239);
     
 }
 main>aside {
@@ -51,6 +60,9 @@ main>aside {
         margin-top: -25px;
     }
   
+
+
+  
 }
 
 .Logo {
@@ -64,6 +76,7 @@ main>aside {
 
 
 
+
 .welcome {
     color: white;
     margin-top: -125px;
@@ -72,7 +85,7 @@ main>aside {
     text-align: center;        
 }
 
-.menu-items {
+.menubox-items {
     display: flex;
     justify-content: space-between; 
     gap: 20px; 
@@ -152,9 +165,8 @@ h1 {
     background-color: rgb(240,198,198);
     border-radius:20px ;
     box-shadow: 5px 5px 5px rgb(113, 113, 113);
-    
-    width: 60%;
-    margin: 0 auto;
+    width: 50%;
+    margin: 0 auto ;
     margin-top: 20px;
 }
 
@@ -163,3 +175,12 @@ h1 {
     flex-direction: column; 
     align-items: center;
 }
+
+
+
+.search-icon {
+    width: 79px; 
+    margin-top: -60px;
+    margin-left: 325px; 
+}
+
