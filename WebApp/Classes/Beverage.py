@@ -1,4 +1,4 @@
-from WebApp.Product import Product
+from .Product import Product
 
 
 class Beverage(Product):

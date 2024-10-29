@@ -53,6 +53,7 @@ main>aside {
 
 .cart {
     width: 80px;  
+    margin-top: -20px;
 }
 
 
@@ -121,10 +122,22 @@ section {
     font-weight: bold;
 }
 
+
 footer {
     background-color: rgb(229,62, 62);
     margin-bottom: -15px;
     text-align: center;
     font-size: 20px;
-
 }
+
+.Social {
+    padding-top: 20px;
+}
+
+.middle {
+    margin-top: -20px;
+    margin-bottom: 80px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+}
+
