@@ -44,6 +44,12 @@ main>aside {
         margin-top: -25px;
     }
     
+    .back {
+        width: 60px;
+        position: absolute;
+        left: 10px;
+        margin-top: -25px;
+    }
   
 }
 
@@ -145,8 +151,15 @@ h1 {
     text-align: center;
     background-color: rgb(240,198,198);
     border-radius:20px ;
-    box-shadow: 10px 10px rgb(113, 113, 113);
+    box-shadow: 5px 5px 5px rgb(113, 113, 113);
+    
     width: 60%;
     margin: 0 auto;
     margin-top: 20px;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
 }
