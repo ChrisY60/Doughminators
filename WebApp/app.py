@@ -1,10 +1,113 @@
 from flask import Flask, render_template, jsonify
-from WebApp.Order import Order
 from datetime import datetime
-from WebApp.Product import Product
-from WebApp.Pizza import Pizza
-from WebApp.Beverage import Beverage
-from WebApp.Topping import Topping  # Assuming Topping is defined in WebApp.Topping
+
+from Classes.Topping import *
+
+
+
+
+
+# class Topping:
+#     def __init__(self, name, price, description=""):
+#         self.name = name
+#         self.price = price
+#         self.description = description
+
+#     def to_dict(self):
+#         return {
+#             "name": self.name,
+#             "price": self.price,
+#             "description": self.description
+#         }
+
+class Product:
+    def __init__(self, name, price, description, imageURL):
+        self.name = name
+        self.price = price
+        self.description = description
+        self.imageURL = imageURL
+
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "price": self.price,
+            "description": self.description,
+            "imageURL": self.imageURL
+        }
+
+
+class Pizza(Product):
+    def __init__(self, name, price, description, imageURL, crust, base, size, toppings):
+        super().__init__(name, price, description, imageURL)
+        self.crust = crust
+        self.base = base
+        self.size = size
+        self.toppings = toppings
+
+    def add_topping(self, topping):
+        self.toppings.append(topping)
+        self.price += topping.price
+
+    def remove_topping(self, topping):
+        if topping in self.toppings:
+            self.toppings.remove(topping)
+            self.price -= topping.price
+
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "price": self.price,
+            "description": self.description,
+            "imageURL": self.imageURL,
+            "crust": self.crust,
+            "base": self.base,
+            "size": self.size,
+            "toppings": [topping.to_dict() for topping in self.toppings]
+        }
+
+
+
+class Beverage(Product):
+    def __init__(self, name, price, description, imageURL, milliliters):
+        super().__init__(name, price, description, imageURL)
+        self.milliliters = milliliters
+
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "price": self.price,
+            "description": self.description,
+            "imageURL": self.imageURL,
+            "milliliters": self.milliliters
+        }
+
+
+class Order:
+    STATUS_OPTIONS = ["TO DO", "COOKING", "READY FOR SERVING", "SERVED"]
+    def __init__(self, id, table, datetime, products, totalPrice, status):
+        self.id = id
+        self.table = table
+        self.datetime = datetime.now()
+        self.products = products
+        self.totalPrice = totalPrice
+        self.status = "TO DO"
+
+    def update_totalPrice(self):
+        totalPrice = sum(item.price for item in self.products)
+
+    def add_product(self, product):
+        self.products.append(product)
+        self.totalPrice += product.price
+
+    def remove_product(self, product):
+        self.products.remove(product)
+        self.totalPrice -= product.price
+
+    def set_status(self, status):
+        if status in self.STATUS_OPTIONS:
+            self.status = status
+        else:
+            raise ValueError("Status must be one of: " + ", ".join(self.STATUS_OPTIONS))
 
 app = Flask(__name__)
 app.secret_key = 'DoughminatorsKey'
