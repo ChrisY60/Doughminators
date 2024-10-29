@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/stylesheet.css">
+    <title>Pizza Menu</title>
+</head>
+<body>
+    <header>
+            <div class="headerback">
+                <img class="Logo" src="../static/images/Logo.png" alt="Logo">
+                <a href="/cart" class="cart-item">
+                     <img class="cart" src="../static/images/cartn.png" alt="cart_symbol">
+                </a>
+                <a href="/menu" class="menu">
+                <img class="menu" src="../static/images/menu1.jpg" alt="menu">
+                </a>
+            </div>
+    </header>
+    <main>
+        <h1>Pizza Menu</h1>
+        <div class="menu-items">
+            {% for pizza in pizzas %}
+                <div class="menu-item">
+                    <h2>{{ pizza.name }}</h2>
+                    <p>{{ pizza.description }}</p>
+                    <p>Price: ${{ pizza.price }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+    <footer>
+    
+    </footer>
+</body>
+</html>
