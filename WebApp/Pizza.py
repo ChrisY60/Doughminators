@@ -1,5 +1,4 @@
-from .Product import Product
-
+from WebApp.Product import Product
 
 
 class Pizza(Product):
