@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Margherita",
+        "price": 8.00,
+        "description": "Classic cheese and tomato pizza",
+        "imageURL": "image_url",
+        "crust": "thin",
+        "base": "tomato",
+        "size": "medium",
+        "toppings": ["Extra Cheese"]
+    },
+    {
+        "name": "Pepperoni Feast",
+        "price": 10.00,
+        "description": "Loaded with pepperoni and cheese",
+        "imageURL": "image_url",
+        "crust": "thick",
+        "base": "tomato",
+        "size": "large",
+        "toppings": ["Pepperoni", "Extra Cheese"]
+    },
+    {
+        "name": "Hawaiian",
+        "price": 9.50,
+        "description": "A tropical mix of ham and pineapple",
+        "imageURL": "image_url",
+        "crust": "thin",
+        "base": "tomato",
+        "size": "medium",
+        "toppings": ["Pineapple", "Ham", "Extra Cheese"]
+    },
+    {
+        "name": "Veggie Delight",
+        "price": 9.00,
+        "description": "Loaded with fresh veggies",
+        "imageURL": "image_url",
+        "crust": "thin",
+        "base": "tomato",
+        "size": "large",
+        "toppings": ["Olives", "Bell Peppers", "Onions", "Mushrooms", "Spinach"]
+    },
+    {
+        "name": "BBQ Chicken",
+        "price": 11.00,
+        "description": "Tangy BBQ sauce with grilled chicken",
+        "imageURL": "image_url",
+        "crust": "stuffed",
+        "base": "bbq",
+        "size": "large",
+        "toppings": ["Chicken", "Onions", "Bacon", "Extra Cheese"]
+    },
+    {
+        "name": "Spicy Meat Lover",
+        "price": 12.00,
+        "description": "Pepperoni, sausage, bacon, and jalapenos",
+        "imageURL": "image_url",
+        "crust": "thick",
+        "base": "tomato",
+        "size": "large",
+        "toppings": ["Pepperoni", "Sausage", "Bacon", "Jalapenos"]
+    }
+]
