@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Board</title>
+    <link rel="stylesheet" href="../static/style.css">
+
+</head>
+<body>
+    <div class="border"></div>
+    <div class="container">
+        <div class="column waiting-list" id="waiting-list">
+            <h2>Waiting List</h2>
+        </div>
+        <div class="column in-process" id="in-process">
+            <h2>In Process</h2>
+        </div>
+        <div class="column ready" id="ready">
+            <h2>Ready</h2>
+        </div>
+    </div>  
+    <div class="borderline"></div>
+    <div class="container2">
+        <div class="column2 waiting-list" id="waiting-list-items">
+            <p onclick="moveItem(this)">Table 1: Small Pepperoni pizza, Coca-Cola (2), Medium Margarita pizza</p>
+            <p onclick="moveItem(this)">Table 4: Big Pepperoni pizza, Fanta orange (2), Cinnamon sticks</p>
+            <p onclick="moveItem(this)">Table 7: Small Pepperoni pizza, Coca-Cola (2), Medium Margarita pizza</p>
+            <p onclick="moveItem(this)">Table 9: Big Pepperoni pizza, Fanta orange (2), Cinnamon sticks</p>
+        </div>
+        <div class="column2 in-process" id="in-process-items">
+        </div>
+        <div class="column2 ready" id="ready-items">
+        </div>
+    </div>
+
+    <script>
+        function moveItem(item) {
+            const waitingList = document.getElementById('waiting-list-items');
+            const inProcess = document.getElementById('in-process-items');
+            const readyList = document.getElementById('ready-items');
+    
+            // Determine the current parent of the item
+            const currentParent = item.parentElement;
+    
+            // Remove item from current list
+            item.remove();
+    
+            if (currentParent === waitingList) {
+                // Move to In Process
+                inProcess.appendChild(item);
+            } else if (currentParent === inProcess) {
+                // Move to Ready
+                readyList.appendChild(item);
+            } else if (currentParent === readyList) {
+                // Remove item from view
+                item.remove();
+            }
+        }
+    </script>
+    
+</body>
+</html>
