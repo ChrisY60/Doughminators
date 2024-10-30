@@ -26,7 +26,7 @@ main>aside {
     display: flex;
     justify-content: space-between; 
     align-items: center;
-    border-top: 10px solid rgb(0, 0, 0);
+    border-top: 10px solid rgb(255, 255, 255);
     border-bottom: 10px solid green;
 }
 
@@ -121,13 +121,14 @@ main>aside {
 }
 
 .pizzaimg, .bevimg {
-    width: 100%; 
+    width: 95%; 
     height: auto; 
     object-fit: cover; 
     border-radius: 10px; 
     position: relative;
     z-index: 1; 
 }
+
 
 section {
     text-align: center;
@@ -200,8 +201,8 @@ h1 {
 
 
 .search-icon {
-    width: 79px; 
-    margin-top: -70px;
+    width: 60px; 
+    margin-top: -80px;
     margin-left: 325px; 
     background-color: white;
     border-radius: 100px;
@@ -210,8 +211,50 @@ h1 {
 .beverage-image {
     width: 150px; /* Adjust the width as needed */
     height: auto; /* Maintains the aspect ratio */
-    border-radius: 8px; /* Optional: rounds the corners */
+    border-radius: 8px; 
     display: block;
-    margin: 0 auto 10px auto; /* Center the image and add space below */
+    margin: 0 auto 10px auto; 
 }
 
+button {
+    background-color: #ff6347; /* Tomato color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    width: 100%; /* Optional: full width */
+}
+
+
+button :hover {
+    background-color: #e5533c; /
+}
+
+#pizzaList {
+    list-style-type: none; 
+}
+
+#beverageList {
+    list-style-type: none; 
+}
+
+.pizza-image {
+    width: 100%;            
+    max-width: 200px;      
+    max-height: 200px;      
+    object-fit: cover;      
+    border-radius: 10px;    
+}
+
+#footred {
+    background-color: #e5533c;               
+    padding: 20px;             
+    text-align: center;                      
+    bottom: 0;                   
+    width: 100%;                 
+}

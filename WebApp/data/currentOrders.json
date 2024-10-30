@@ -1,0 +1,543 @@
+[
+    {
+        "id": "6c7b2769-8613-413f-adfb-d57e1a077a14",
+        "table": 4,
+        "datetime": "2024-10-30 15:22:42.179003",
+        "products": [
+            {
+                "name": "BBQ Chicken",
+                "price": 11.0,
+                "description": "Tangy BBQ sauce with grilled chicken",
+                "imageURL": "image_url",
+                "crust": "stuffed",
+                "base": "bbq",
+                "size": "large",
+                "toppings": [
+                    {
+                        "name": "Chicken",
+                        "price": 1.5,
+                        "description": "Grilled chicken pieces"
+                    },
+                    {
+                        "name": "Onions",
+                        "price": 0.5,
+                        "description": "Thinly sliced red onions"
+                    },
+                    {
+                        "name": "Bacon",
+                        "price": 1.75,
+                        "description": "Crispy bacon pieces"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Sprite",
+                "price": 2.0,
+                "description": "Lemon-lime flavored soft drink",
+                "imageURL": "../static/images/sprite.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 13.0,
+        "status": "COOKING"
+    },
+    {
+        "id": "8b8d812c-f067-4055-a761-6887c5131e23",
+        "table": 4,
+        "datetime": "2024-10-30 15:22:49.832230",
+        "products": [
+            {
+                "name": "Pepperoni Feast",
+                "price": 10.0,
+                "description": "Loaded with pepperoni and cheese",
+                "imageURL": "image_url",
+                "crust": "thick",
+                "base": "tomato",
+                "size": "large",
+                "toppings": [
+                    {
+                        "name": "Pepperoni",
+                        "price": 1.5,
+                        "description": "Spicy pepperoni slices"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Sprite",
+                "price": 2.0,
+                "description": "Lemon-lime flavored soft drink",
+                "imageURL": "../static/images/sprite.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 12.0,
+        "status": "COOKING"
+    },
+    {
+        "id": "e8555840-8939-4bde-a12a-1fa86ba49d83",
+        "table": 4,
+        "datetime": "2024-10-30 15:22:51.677140",
+        "products": [
+            {
+                "name": "Pepperoni Feast",
+                "price": 10.0,
+                "description": "Loaded with pepperoni and cheese",
+                "imageURL": "image_url",
+                "crust": "thick",
+                "base": "tomato",
+                "size": "large",
+                "toppings": [
+                    {
+                        "name": "Pepperoni",
+                        "price": 1.5,
+                        "description": "Spicy pepperoni slices"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Lemonade",
+                "price": 2.5,
+                "description": "Refreshing lemon drink",
+                "imageURL": "../static/images/lemonade.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 12.5,
+        "status": "COOKING"
+    },
+    {
+        "id": "587131c3-823f-4785-b415-99db42afac97",
+        "table": 4,
+        "datetime": "2024-10-30 15:22:52.338419",
+        "products": [
+            {
+                "name": "Hawaiian",
+                "price": 9.5,
+                "description": "A tropical mix of ham and pineapple",
+                "imageURL": "image_url",
+                "crust": "thin",
+                "base": "tomato",
+                "size": "medium",
+                "toppings": [
+                    {
+                        "name": "Pineapple",
+                        "price": 1.0,
+                        "description": "Sweet pineapple chunks"
+                    },
+                    {
+                        "name": "Ham",
+                        "price": 1.25,
+                        "description": "Sliced ham"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Sprite",
+                "price": 2.0,
+                "description": "Lemon-lime flavored soft drink",
+                "imageURL": "../static/images/sprite.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 11.5,
+        "status": "READY FOR SERVING"
+    },
+    {
+        "id": "981a5743-b152-4f06-8578-37fa5f9d5487",
+        "table": 4,
+        "datetime": "2024-10-30 15:22:53.083383",
+        "products": [
+            {
+                "name": "Veggie Delight",
+                "price": 9.0,
+                "description": "Loaded with fresh veggies",
+                "imageURL": "image_url",
+                "crust": "thin",
+                "base": "tomato",
+                "size": "large",
+                "toppings": [
+                    {
+                        "name": "Olives",
+                        "price": 0.75,
+                        "description": "Green olives"
+                    },
+                    {
+                        "name": "Bell Peppers",
+                        "price": 0.7,
+                        "description": "Colorful bell peppers"
+                    },
+                    {
+                        "name": "Onions",
+                        "price": 0.5,
+                        "description": "Thinly sliced red onions"
+                    },
+                    {
+                        "name": "Mushrooms",
+                        "price": 0.8,
+                        "description": "Fresh mushrooms"
+                    },
+                    {
+                        "name": "Spinach",
+                        "price": 0.65,
+                        "description": "Fresh spinach leaves"
+                    }
+                ]
+            },
+            {
+                "name": "Water",
+                "price": 1.5,
+                "description": "Bottled mineral water",
+                "imageURL": "../static/images/water.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 10.5,
+        "status": "READY FOR SERVING"
+    },
+    {
+        "id": "eec9d871-682c-4f3d-8ce3-007cf499b7a2",
+        "table": 4,
+        "datetime": "2024-10-30 15:22:53.801409",
+        "products": [
+            {
+                "name": "BBQ Chicken",
+                "price": 11.0,
+                "description": "Tangy BBQ sauce with grilled chicken",
+                "imageURL": "image_url",
+                "crust": "stuffed",
+                "base": "bbq",
+                "size": "large",
+                "toppings": [
+                    {
+                        "name": "Chicken",
+                        "price": 1.5,
+                        "description": "Grilled chicken pieces"
+                    },
+                    {
+                        "name": "Onions",
+                        "price": 0.5,
+                        "description": "Thinly sliced red onions"
+                    },
+                    {
+                        "name": "Bacon",
+                        "price": 1.75,
+                        "description": "Crispy bacon pieces"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Orange Juice",
+                "price": 3.0,
+                "description": "Freshly squeezed orange juice",
+                "imageURL": "../static/images/orange-juice.png",
+                "milliliters": 400
+            }
+        ],
+        "totalPrice": 14.0,
+        "status": "TO DO"
+    },
+    {
+        "id": "7256add5-d78f-44a1-b0e2-4552513039f3",
+        "table": 4,
+        "datetime": "2024-10-30 15:30:51.423962",
+        "products": [
+            {
+                "name": "Margherita",
+                "price": 8.0,
+                "description": "Classic cheese and tomato pizza",
+                "imageURL": "image_url",
+                "crust": "thin",
+                "base": "tomato",
+                "size": "medium",
+                "toppings": [
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Cola-Coca",
+                "price": 2.0,
+                "description": "Refreshing Coke",
+                "imageURL": "../static/images/cola.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 10.0,
+        "status": "TO DO"
+    },
+    {
+        "id": "226626ab-3a88-4b60-a2cf-1fc74786d5d8",
+        "table": 4,
+        "datetime": "2024-10-30 15:30:53.083033",
+        "products": [
+            {
+                "name": "Pepperoni Feast",
+                "price": 10.0,
+                "description": "Loaded with pepperoni and cheese",
+                "imageURL": "image_url",
+                "crust": "thick",
+                "base": "tomato",
+                "size": "large",
+                "toppings": [
+                    {
+                        "name": "Pepperoni",
+                        "price": 1.5,
+                        "description": "Spicy pepperoni slices"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Water",
+                "price": 1.5,
+                "description": "Bottled mineral water",
+                "imageURL": "../static/images/water.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 11.5,
+        "status": "TO DO"
+    },
+    {
+        "id": "d0f8ce7b-baf8-4073-9eef-8d0a8bb5fe97",
+        "table": 4,
+        "datetime": "2024-10-30 15:30:54.088662",
+        "products": [
+            {
+                "name": "Pepperoni Feast",
+                "price": 10.0,
+                "description": "Loaded with pepperoni and cheese",
+                "imageURL": "image_url",
+                "crust": "thick",
+                "base": "tomato",
+                "size": "large",
+                "toppings": [
+                    {
+                        "name": "Pepperoni",
+                        "price": 1.5,
+                        "description": "Spicy pepperoni slices"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Sparkling Water",
+                "price": 2.0,
+                "description": "Bubbly mineral water",
+                "imageURL": "../static/images/sparkling-water.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 12.0,
+        "status": "TO DO"
+    },
+    {
+        "id": "e3a3d02c-8a88-444b-a422-342d8ce3661f",
+        "table": 4,
+        "datetime": "2024-10-30 15:30:55.500766",
+        "products": [
+            {
+                "name": "Veggie Delight",
+                "price": 9.0,
+                "description": "Loaded with fresh veggies",
+                "imageURL": "image_url",
+                "crust": "thin",
+                "base": "tomato",
+                "size": "large",
+                "toppings": [
+                    {
+                        "name": "Olives",
+                        "price": 0.75,
+                        "description": "Green olives"
+                    },
+                    {
+                        "name": "Bell Peppers",
+                        "price": 0.7,
+                        "description": "Colorful bell peppers"
+                    },
+                    {
+                        "name": "Onions",
+                        "price": 0.5,
+                        "description": "Thinly sliced red onions"
+                    },
+                    {
+                        "name": "Mushrooms",
+                        "price": 0.8,
+                        "description": "Fresh mushrooms"
+                    },
+                    {
+                        "name": "Spinach",
+                        "price": 0.65,
+                        "description": "Fresh spinach leaves"
+                    }
+                ]
+            },
+            {
+                "name": "Water",
+                "price": 1.5,
+                "description": "Bottled mineral water",
+                "imageURL": "../static/images/water.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 10.5,
+        "status": "TO DO"
+    },
+    {
+        "id": "ca69fdf1-3929-4fde-9e3a-d3090baad73e",
+        "table": 4,
+        "datetime": "2024-10-30 15:31:22.848021",
+        "products": [
+            {
+                "name": "Hawaiian",
+                "price": 9.5,
+                "description": "A tropical mix of ham and pineapple",
+                "imageURL": "image_url",
+                "crust": "thin",
+                "base": "tomato",
+                "size": "medium",
+                "toppings": [
+                    {
+                        "name": "Pineapple",
+                        "price": 1.0,
+                        "description": "Sweet pineapple chunks"
+                    },
+                    {
+                        "name": "Ham",
+                        "price": 1.25,
+                        "description": "Sliced ham"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Water",
+                "price": 1.5,
+                "description": "Bottled mineral water",
+                "imageURL": "../static/images/water.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 11.0,
+        "status": "TO DO"
+    },
+    {
+        "id": "8901f8b8-23dc-448d-88bb-8f0e29a2dba6",
+        "table": 4,
+        "datetime": "2024-10-30 15:31:24.132283",
+        "products": [
+            {
+                "name": "Hawaiian",
+                "price": 9.5,
+                "description": "A tropical mix of ham and pineapple",
+                "imageURL": "image_url",
+                "crust": "thin",
+                "base": "tomato",
+                "size": "medium",
+                "toppings": [
+                    {
+                        "name": "Pineapple",
+                        "price": 1.0,
+                        "description": "Sweet pineapple chunks"
+                    },
+                    {
+                        "name": "Ham",
+                        "price": 1.25,
+                        "description": "Sliced ham"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Sparkling Water",
+                "price": 2.0,
+                "description": "Bubbly mineral water",
+                "imageURL": "../static/images/sparkling-water.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 11.5,
+        "status": "TO DO"
+    },
+    {
+        "id": "b5349f3b-a9f1-4ab6-a7ea-61492182d7bf",
+        "table": 4,
+        "datetime": "2024-10-30 15:31:25.700006",
+        "products": [
+            {
+                "name": "Pepperoni Feast",
+                "price": 10.0,
+                "description": "Loaded with pepperoni and cheese",
+                "imageURL": "image_url",
+                "crust": "thick",
+                "base": "tomato",
+                "size": "large",
+                "toppings": [
+                    {
+                        "name": "Pepperoni",
+                        "price": 1.5,
+                        "description": "Spicy pepperoni slices"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Lemonade",
+                "price": 2.5,
+                "description": "Refreshing lemon drink",
+                "imageURL": "../static/images/lemonade.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 12.5,
+        "status": "TO DO"
+    }
+]

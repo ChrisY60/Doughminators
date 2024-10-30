@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/stylesheet.css">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
     <title>Beverages Menu</title>
 </head>
 <body>
@@ -21,18 +22,21 @@
     <main>
         <div class="menu-items">
             <h1>Beverages Menu</h1>
-            <img class="search-icon" src="../static/images/searchicon.png" alt="Search">
+            <img class="search-icon" src="../static/images/seachi.jpg" alt="Search">
+        <ul id="beverageList">
             {% for beverage in beverages %}
-                <div class="menu-item">
+                <li class="menu-item"> 
                     <img src="{{ beverage.imageURL }}" alt="{{ beverage.name }}" class="beverage-image">
                     <h2>{{ beverage.name }}</h2>
                     <p>{{ beverage.description }}</p>
-                    <p>Price: €{{ beverage.price }}</p>
-                    <p>{{ beverage.milliliters }} ml</p>
-                </div>
+                    <p>Price: €{{ beverage.price }}</p> 
+                    <button onclick="addToOrder('{{ beverage.name }}', '{{ beverage.price }}')">Add to Order</button>
+                </li>
             {% endfor %}
-        </div>
+        </ul>
     </main>
-    <footer></footer>
+    <footer>
+        <div id="footred"></div>
+    </footer>
 </body>
 </html>
