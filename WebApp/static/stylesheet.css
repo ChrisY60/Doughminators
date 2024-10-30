@@ -75,7 +75,11 @@ main>aside {
     margin-top: -45px;
 }
 
-
+.cartmenu {
+    width: 80px;  
+    margin-top: -45px;
+    margin: auto;
+}
 
 
 .welcome {
@@ -201,5 +205,13 @@ h1 {
     margin-left: 325px; 
     background-color: white;
     border-radius: 100px;
+}
+
+.beverage-image {
+    width: 150px; /* Adjust the width as needed */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 8px; /* Optional: rounds the corners */
+    display: block;
+    margin: 0 auto 10px auto; /* Center the image and add space below */
 }
 
