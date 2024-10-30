@@ -92,11 +92,41 @@ def beverages_page():
 
 @app.route("/makeOrder")
 def make_order():
-
     selected_pizza = random.choice(pizzas)
     selected_beverage = random.choice(beverages)
     items = [selected_pizza, selected_beverage]
-    order = Order(4, items, sum(item.price for item in items))
+    try:
+        with open('cart.json', 'r') as file:
+            cart = json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return jsonify({"error": "Cart is empty or file is missing."}), 400
+
+    products = []
+    for item in cart:
+        if 'crust' in item and 'base' in item:
+            pizza = Pizza(
+                name=item['name'],
+                price=item['price'],
+                description=item['description'],
+                imageURL=item['imageURL'],
+                crust=item['crust'],
+                base=item['base'],
+                size=item['size'],
+                toppings=[Topping(topping['name'], topping['price'], topping['description']) for topping in
+                          item.get('toppings', [])]
+            )
+            products.append(pizza)
+        elif 'milliliters' in item:
+            beverage = Beverage(
+                name=item['name'],
+                price=item['price'],
+                description=item['description'],
+                imageURL=item['imageURL'],
+                milliliters=item['milliliters']
+            )
+            products.append(beverage)
+
+    order = Order(4, products, 40)
 
     try:
         with open('data/currentOrders.json', 'r') as file:
@@ -109,7 +139,7 @@ def make_order():
     with open('data/currentOrders.json', 'w') as file:
         json.dump(current_orders, file, indent=4)
 
-    return jsonify(order.to_dict())
+    return render_template("OrderConfirmed.html", items=products, total_price=order.totalPrice)
 
 @app.route("/getOrdersForKitchen")
 def get_orders_for_kitchen():
@@ -170,7 +200,7 @@ def cart():
         print(f"Error loading orders: {e}")
         return jsonify({"error": "Could not load orders."}), 500
 
-# New Route to Remove an Item from the Cart
+
 @app.route('/remove_item', methods=['POST'])
 def remove_item():
     item_id = request.json.get("id")  # Get the item ID from the request

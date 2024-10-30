@@ -1,14 +1,19 @@
 [
   {
-    "name": "Margherita",
-    "price": 8.0,
-    "id": "57d28d51-1482-467d-8415-015035896312",
-    "imageURL": "/static/images/margherita.jpg",
-    "description": "Classic cheese and tomato pizza",
-    "crust": "thin",
+    "name": "Pepperoni Feast",
+    "price": 10.0,
+    "id": "f564e720-5506-4c80-b096-95ec226d4f61",
+    "imageURL": "/static/images/pepperoni_feast.jpg",
+    "description": "Loaded with pepperoni and cheese",
+    "crust": "thick",
     "base": "tomato",
-    "size": "medium",
+    "size": "large",
     "toppings": [
+      {
+        "name": "Pepperoni",
+        "price": 1.5,
+        "description": "Spicy pepperoni slices"
+      },
       {
         "name": "Extra Cheese",
         "price": 1.0,
@@ -19,7 +24,7 @@
   {
     "name": "Hawaiian",
     "price": 9.5,
-    "id": "100067bd-339d-4117-a82a-2ee522206571",
+    "id": "80f0a7ca-a5d7-4aea-b953-656a0e3fbf79",
     "imageURL": "/static/images/hawaiian.jpg",
     "description": "A tropical mix of ham and pineapple",
     "crust": "thin",
@@ -46,9 +51,17 @@
   {
     "name": "Cola-Coca",
     "price": 2.0,
-    "id": "8a692856-b150-4fa2-bca7-36ddf9e7022b",
+    "id": "8fd6ab71-8d67-4a1e-b876-a7c310c5a41c",
     "imageURL": "../static/images/cola.png",
     "description": "Refreshing Coke",
+    "milliliters": 500
+  },
+  {
+    "name": "Sprite",
+    "price": 2.0,
+    "id": "88f4f250-98f2-4d6c-bc8a-a4a9df2b9582",
+    "imageURL": "../static/images/sprite.png",
+    "description": "Lemon-lime flavored soft drink",
     "milliliters": 500
   }
 ]
