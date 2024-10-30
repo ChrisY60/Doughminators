@@ -1,6 +1,7 @@
 from flask import Flask, render_template, jsonify, request
 import json
 import os 
+import random
 from datetime import datetime
 from Classes.Topping import Topping
 from Classes.Product import Product
@@ -59,12 +60,24 @@ def beverages_page():
 
 @app.route("/makeOrder")
 def make_order():
-    items = [pizzas[0], beverages[0]]
-    current_time = datetime.now().strftime("%H:%M:%S")
+    selected_pizza = random.choice(pizzas)
+    selected_beverage = random.choice(beverages)
+    items = [selected_pizza, selected_beverage]
 
-    order = Order(1, 4, current_time, items, sum(item.price for item in items), "TO DO")
+    order = Order(4, items, sum(item.price for item in items))  # ID is auto-generated
 
-    return jsonify(order.__dict__)
+    # Append to order history JSON
+    with open("data/orderHistory.json", "a") as f:
+        json.dump(order.to_dict(), f)
+        f.write("\n")
+
+    # Append to current orders JSON
+    with open("data/currentOrders.json", "a") as f:
+        json.dump(order.to_dict(), f)
+        f.write("\n")
+
+    return jsonify(order.to_dict())  # Return serialized order
+
 
 @app.route('/add_to_order', methods=['POST'])
 def add_to_order():
