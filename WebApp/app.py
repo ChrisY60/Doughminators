@@ -70,7 +70,7 @@ def make_order():
 def add_to_order():
     data = request.json
     save_order(data)
-    return jsonify({"status": "success", "message": "Pizza added to order!"})
+    return jsonify({"status": "success", "message": "Item added to order!"})
 
 if __name__ == '__main__':
     app.run(port=8080)
