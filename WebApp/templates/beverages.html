@@ -23,8 +23,8 @@
             <h1>Beverages Menu</h1>
             {% for beverage in beverages %}
                 <div class="menu-item2">
-                    <h2>{{ beverages.name }}</h2>
-                    <p>{{ beverages.description }}</p>
+                    <h2>{{ beverage.name }}</h2>
+                    <p>{{ beverage.description }}</p>
                     <p>Price: €{{ beverage.price }}</p>
                 </div>
             {% endfor %}
