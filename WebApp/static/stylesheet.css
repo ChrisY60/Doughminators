@@ -215,3 +215,21 @@ h1 {
     margin: 0 auto 10px auto; /* Center the image and add space below */
 }
 
+.add-to-order {
+    background-color: #ff6347; /* Tomato color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    width: 100%; /* Optional: full width */
+}
+
+
+.add-to-order:hover {
+    background-color: #e5533c; /* Darker shade on hover */
+}
