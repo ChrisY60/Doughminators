@@ -178,14 +178,16 @@ h1 {
     display: flex;
     flex-direction: column; 
     align-items: center;
-    width: 50%;
+    width: 80%;
     margin: auto;
     border-radius: 20px;
+    
 }
+
 
 .menu-item {
     background-color: rgb(255, 185, 56);
-    margin: 20px 0; 
+    margin: 30px 0; 
     text-align: center;
     border-radius: 20px;
     width: 90%; /* Adjust width as needed */
@@ -195,7 +197,9 @@ h1 {
 
 .search-icon {
     width: 79px; 
-    margin-top: -60px;
+    margin-top: -70px;
     margin-left: 325px; 
+    background-color: white;
+    border-radius: 100px;
 }
 
