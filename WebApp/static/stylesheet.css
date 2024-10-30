@@ -201,8 +201,8 @@ h1 {
 
 
 .search-icon {
-    width: 79px; 
-    margin-top: -70px;
+    width: 60px; 
+    margin-top: -80px;
     margin-left: 325px; 
     background-color: white;
     border-radius: 100px;
@@ -249,4 +249,15 @@ button :hover {
     max-height: 200px;      
     object-fit: cover;      
     border-radius: 10px;    
+}
+
+#footred {
+    background-color: #e5533c;
+    color: white;                
+    padding: 20px;             
+    text-align: center;          
+    position: fixed;             
+    bottom: 0;                   
+    width: 100%;                 
+    z-index: 10; 
 }
