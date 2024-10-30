@@ -1,17 +1,19 @@
-from datetime import datetime
+import uuid
+from datetime import datetime as dt
 
 class Order:
     STATUS_OPTIONS = ["TO DO", "COOKING", "READY FOR SERVING", "SERVED"]
-    def __init__(self, id, table, datetime, products, totalPrice, status):
-        self.id = id
+
+    def __init__(self, table, products, totalPrice, status="TO DO"):
+        self.id = str(uuid.uuid4())  # Generate a unique GUID
         self.table = table
-        self.datetime = datetime.now()
+        self.datetime = dt.now()
         self.products = products
         self.totalPrice = totalPrice
-        self.status = "TO DO"
+        self.status = status
 
     def update_totalPrice(self):
-        totalPrice = sum(item.price for item in self.products)
+        self.totalPrice = sum(item.price for item in self.products)
 
     def add_product(self, product):
         self.products.append(product)
@@ -26,3 +28,13 @@ class Order:
             self.status = status
         else:
             raise ValueError("Status must be one of: " + ", ".join(self.STATUS_OPTIONS))
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "table": self.table,
+            "datetime": str(self.datetime),
+            "products": [product.to_dict() for product in self.products],
+            "totalPrice": self.totalPrice,
+            "status": self.status
+        }
