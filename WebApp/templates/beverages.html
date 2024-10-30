@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/stylesheet.css">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
     <title>Beverages Menu</title>
 </head>
 <body>
@@ -27,8 +28,8 @@
                     <img src="{{ beverage.imageURL }}" alt="{{ beverage.name }}" class="beverage-image">
                     <h2>{{ beverage.name }}</h2>
                     <p>{{ beverage.description }}</p>
-                    <p>Price: €{{ beverage.price }}</p>
-                  
+                    <p>Price: €{{ beverage.price }}</p> 
+                    <button onclick="addToOrder('{{ beverages.name }}', '{{ beverage.price }}')">Add to Order</button>
                 </li>
             {% endfor %}
         </ul>

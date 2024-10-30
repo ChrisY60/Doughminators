@@ -210,12 +210,12 @@ h1 {
 .beverage-image {
     width: 150px; /* Adjust the width as needed */
     height: auto; /* Maintains the aspect ratio */
-    border-radius: 8px; /* Optional: rounds the corners */
+    border-radius: 8px; 
     display: block;
-    margin: 0 auto 10px auto; /* Center the image and add space below */
+    margin: 0 auto 10px auto; 
 }
 
-.add-to-order {
+button {
     background-color: #ff6347; /* Tomato color */
     color: white;
     border: none;
@@ -230,6 +230,14 @@ h1 {
 }
 
 
-.add-to-order:hover {
-    background-color: #e5533c; /* Darker shade on hover */
+button :hover {
+    background-color: #e5533c; /
+}
+
+#pizzaList {
+    list-style-type: none; 
+}
+
+#beverageList {
+    list-style-type: none; 
 }
