@@ -252,12 +252,9 @@ button :hover {
 }
 
 #footred {
-    background-color: #e5533c;
-    color: white;                
+    background-color: #e5533c;               
     padding: 20px;             
-    text-align: center;          
-    position: fixed;             
+    text-align: center;                      
     bottom: 0;                   
     width: 100%;                 
-    z-index: 10; 
 }
