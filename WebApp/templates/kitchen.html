@@ -4,29 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitchen Orders</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa; /* Light background color for contrast */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .column {
+            flex: 1; /* Make each column take equal space */
+            margin: 0 10px; /* Add space between columns */
+            padding: 20px;
+            border-radius: 8px; /* Rounded corners for aesthetics */
+        }
+
+        .to-do {
+            background-color: #f8d7da; /* Light red background */
+            color: #721c24; /* Darker red text */
+        }
+
+        .cooking {
+            background-color: #ffffff; /* White background */
+            color: #000; /* Black text */
+        }
+
+        .ready-to-serve {
+            background-color: #d4edda; /* Light green background */
+            color: #155724; /* Darker green text */
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+        }
+
+        li {
+            margin: 10px 0; /* Space between list items */
+            text-align: center; /* Center align list items */
+        }
+    </style>
 </head>
 <body>
     <h1>Orders for Kitchen</h1>
 
-    <h2>To Do Orders</h2>
-    <ul>
-        {% for order in to_do_orders %}
-            <li>Order ID: {{ order.id }} | Table: {{ order.table }} | Total Price: {{ order.totalPrice }}</li>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <div class="column to-do">
+            <h2>To Do Orders</h2>
+            <ul>
+                {% for order in to_do_orders %}
+                    <li>Table: {{ order.table }}<br>
+                        Products: {% for product in order.products %}{{ product.name }}{% if not loop.last %}, {% endif %}{% endfor %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
 
-    <h2>Cooking Orders</h2>
-    <ul>
-        {% for order in cooking_orders %}
-            <li>Order ID: {{ order.id }} | Table: {{ order.table }} | Total Price: {{ order.totalPrice }}</li>
-        {% endfor %}
-    </ul>
+        <div class="column cooking">
+            <h2>Cooking Right Now</h2>
+            <ul>
+                {% for order in cooking_orders %}
+                    <li>Table: {{ order.table }}<br>
+                        Products: {% for product in order.products %}{{ product.name }}{% if not loop.last %}, {% endif %}{% endfor %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
 
-    <h2>Ready to Serve Orders</h2>
-    <ul>
-        {% for order in ready_to_serve_orders %}
-            <li>Order ID: {{ order.id }} | Table: {{ order.table }} | Total Price: {{ order.totalPrice }}</li>
-        {% endfor %}
-    </ul>
+        <div class="column ready-to-serve">
+            <h2>Ready to Serve</h2>
+            <ul>
+                {% for order in ready_to_serve_orders %}
+                    <li>Table: {{ order.table }}<br>
+                        Products: {% for product in order.products %}{{ product.name }}{% if not loop.last %}, {% endif %}{% endfor %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
