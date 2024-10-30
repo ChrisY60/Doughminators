@@ -28,7 +28,7 @@
             <ul id="pizzaList">
                 {% for pizza in pizzas %}
                     <li class="menu-item"> <!-- Fixed structure here -->
-                        <img class="pizzapep" src="../static/images/pizza1.png" alt="pizza">
+                        <img class="pizza-image" src="{{ pizza.imageURL }}" alt="Image of {{ pizza.name }}">
                         <h2>{{ pizza.name }}</h2>
                         <p>{{ pizza.description }}</p>
                         <p>Price: €{{ pizza.price }}</p>
