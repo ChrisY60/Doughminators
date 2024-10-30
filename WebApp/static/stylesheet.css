@@ -162,6 +162,7 @@ footer {
     padding-top: 20px;
 }
 
+/*another section */
 .middle {
     margin-top: -20px;
     margin-bottom: 80px;
@@ -253,8 +254,143 @@ button :hover {
 
 #footred {
     background-color: #e5533c;               
-    padding: 20px;             
-    text-align: center;                      
+    padding: 20px;                                  
     bottom: 0;                   
-    width: 100%;                 
+    width: 80%;                 
+}
+
+/*cart section.......................................*/
+
+#itemList {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.item span {
+    font-size: 1.1em;
+}
+
+#itemList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: auto;
+}
+
+.item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.item-details {
+    flex: 1;
+    margin-left: 15px;
+}
+
+.item-details h3 {
+    font-size: 1.2em;
+    margin: 0;
+    color: #333;
+}
+
+.item-details {
+    flex: 1;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the start (left-aligned) */
+}
+
+.modify-btn {
+    margin-top: 5px; 
+    padding: 4px 4px;
+    font-size: 0.9em;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    align-self: flex-start; 
+    width: 60%;
+}
+
+
+.item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.quantity-btn {
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+.quantity {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.item-price {
+    font-size: 1.1em;
+    color: #333;
+    margin-left: 15px;
+    white-space: nowrap;
+}
+
+.order-now-btn {
+    width: 40%;
+    margin: auto;
+    padding: 15px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: rgb(51, 178, 73);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.cart-icon {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 20%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100px;
+    box-shadow: 1px 2px 2px  
+
 }

@@ -3,23 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display Menu</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .item {
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="../static/stylesheet.css">
+    <title>Cart</title>
 </head>
 <body>
-    <h1>Menu</h1>
-    <div id="itemList">
-        {% for item in items %}
-            <div class="item">{{ item.name }} - ${{ item.price }}</div>
-        {% endfor %}
-    </div>
+    <header>
+        <div class="headerback">
+            <img class="Logo" src="../static/images/Logo.png" alt="Logo">
+            <a href="/" class="menu">
+                <img class="back" src="../static/images/arrow-back.jpg" alt="home">
+            </a>
+        </div>
+    </header>
+    <main>
+        <div class="cart-icon-container">
+            <img src="../static/images/cartn.png" alt="Cart Icon" class="cart-icon">
+        </div>
+        <div id="itemList">
+            {% for item in items %}
+                <div class="cart-items" data-item-id="{{ item.id }}">
+                    <img src="{{ item.imageURL }}" alt="{{ item.name }} image" class="item-image">
+                    <div class="item-details">
+                        <h3>{{ item.name }}</h3>
+                        <button class="modify-btn">Modify</button>
+                        <button class="remove-btn" onclick="removeItem('{{ item.id }}')">Remove</button> <!-- Remove Button -->
+                    </div>
+                    <div class="item-quantity">
+                        <button class="quantity-btn">+</button>
+                        <span class="quantity">{{ item.quantity or 1 }}</span>
+                        <button class="quantity-btn">-</button>
+                    </div>
+                    <div class="item-price">
+                        €{{ item.price }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <button class="order-now-btn">Order Now</button>
+    </main>
+    
+    <!-- Link to the external JavaScript file -->
+    <script src="{{ url_for('static', filename='cart.js') }}"></script>
 </body>
 </html>

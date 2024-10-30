@@ -1,49 +1,9 @@
 [
   {
-    "pizza_name": "Margherita"
-  },
-  {
     "name": "Margherita",
-    "price": "8.0"
-  },
-  {
-    "name": "Hawaiian",
-    "price": "9.5"
-  },
-  {
-    "name": "",
-    "price": "2.0"
-  },
-  {
-    "name": "",
-    "price": "2.0"
-  },
-  {
-    "name": "",
-    "price": "2.0"
-  },
-  {
-    "name": "Cola-Coca",
-    "price": "2.0"
-  },
-  {
-    "name": "Cola-Coca",
-    "price": "2.0"
-  },
-  {
-    "name": "Margherita",
-    "price": "8.0"
-  },
-  {
-    "name": "Sparkling Water",
-    "price": "2.0"
-  },
-  {
-    "name": "Margherita",
-    "price": "8.0"
-  },
-  {
-    "name": "Spicy Meat Lover",
-    "price": "12.0"
+    "price": "8.0",
+    "id": "72d7276c-e79a-4e8e-a9df-442ecc4e0570",
+    "imageURL": "/static/images/margherita.jpg",
+    "description": "Classic cheese and tomato pizza"
   }
 ]

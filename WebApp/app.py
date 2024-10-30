@@ -2,6 +2,7 @@ from flask import Flask, render_template, jsonify, request
 import json
 import os
 import random
+import uuid  # Import uuid to generate unique IDs
 from datetime import datetime
 from Classes.Topping import Topping
 from Classes.Product import Product
@@ -31,8 +32,16 @@ def load_data():
 
     return toppings, pizzas, beverages
 
-
 def save_order(order_data):
+    item_name = order_data.get("name")
+    matching_item = next((pizza for pizza in pizzas if pizza.name == item_name), None) or \
+                    next((bev for bev in beverages if bev.name == item_name), None)
+    
+    if matching_item:
+        order_data["imageURL"] = matching_item.imageURL
+        order_data["description"] = matching_item.description
+
+    # Append to orders.json
     if os.path.exists('orders.json'):
         with open('orders.json', 'r+') as f:
             orders = json.load(f)
@@ -43,13 +52,7 @@ def save_order(order_data):
         with open('orders.json', 'w') as f:
             json.dump([order_data], f, indent=2)
 
-# Load the data once at the start
 toppings, pizzas, beverages = load_data()
-
-
-def add_order_to_current_orders(order):
-    with open('data/currentOrders.json', 'r+') as f:
-        print("a")
 
 @app.route("/")
 def index():
@@ -68,7 +71,6 @@ def make_order():
     selected_pizza = random.choice(pizzas)
     selected_beverage = random.choice(beverages)
     items = [selected_pizza, selected_beverage]
-
     order = Order(4, items, sum(item.price for item in items))
 
     try:
@@ -83,7 +85,6 @@ def make_order():
         json.dump(current_orders, file, indent=4)
 
     return jsonify(order.to_dict())
-
 
 @app.route("/getOrdersForKitchen")
 def get_orders_for_kitchen():
@@ -109,25 +110,65 @@ def get_orders_for_kitchen():
                            to_do_orders=to_do_orders,
                            cooking_orders=cooking_orders,
                            ready_to_serve_orders=ready_to_serve_orders)
+
 @app.route('/add_to_order', methods=['POST'])
 def add_to_order():
     data = request.json
+
+    # Generate a unique ID for the item being added to the cart
+    data["id"] = str(uuid.uuid4())
+
+    # Save the item to orders.json
     save_order(data)
     return jsonify({"status": "success", "message": "Item added to order!"})
 
 @app.route("/cart")
 def cart():
     try:
-        # Your code to read from orders.json
         if os.path.exists('orders.json'):
             with open('orders.json') as f:
                 orders = json.load(f)
         else:
             orders = []
 
-        return render_template('cart.html', items=orders)
+        enriched_orders = []
+        for order in orders:
+            item_name = order.get("name")
+            matching_item = next((pizza for pizza in pizzas if pizza.name == item_name), None) or \
+                            next((bev for bev in beverages if bev.name == item_name), None)
+            
+            if matching_item:
+                order["imageURL"] = matching_item.imageURL
+                order["description"] = matching_item.description
+            enriched_orders.append(order)
+
+        return render_template('cart.html', items=enriched_orders)
     except Exception as e:
         print(f"Error loading orders: {e}")
         return jsonify({"error": "Could not load orders."}), 500
+
+# New Route to Remove an Item from the Cart
+@app.route('/remove_item', methods=['POST'])
+def remove_item():
+    item_id = request.json.get("id")  # Get the item ID from the request
+
+    try:
+        # Load the current orders from orders.json
+        with open('orders.json', 'r+') as f:
+            orders = json.load(f)
+
+            # Filter out the item to remove based on the provided ID
+            orders = [order for order in orders if order.get("id") != item_id]
+
+            # Write the updated list back to orders.json
+            f.seek(0)
+            f.truncate()
+            json.dump(orders, f, indent=2)
+        
+        return jsonify({"success": True})
+    except Exception as e:
+        print(f"Error removing item: {e}")
+        return jsonify({"success": False}), 500
+
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
