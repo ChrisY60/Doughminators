@@ -4,8 +4,8 @@ from datetime import datetime as dt
 class Order:
     STATUS_OPTIONS = ["TO DO", "COOKING", "READY FOR SERVING", "SERVED"]
 
-    def __init__(self, table, products, totalPrice, status="TO DO"):
-        self.id = str(uuid.uuid4())  # Generate a unique GUID
+    def __init__(self, table, products, totalPrice, status="TO DO", id=None):
+        self.id = id if id is not None else str(uuid.uuid4())
         self.table = table
         self.datetime = dt.now()
         self.products = products

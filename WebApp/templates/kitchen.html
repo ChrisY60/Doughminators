@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Orders</title>
+</head>
+<body>
+    <h1>Orders for Kitchen</h1>
+
+    <h2>To Do Orders</h2>
+    <ul>
+        {% for order in to_do_orders %}
+            <li>Order ID: {{ order.id }} | Table: {{ order.table }} | Total Price: {{ order.totalPrice }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Cooking Orders</h2>
+    <ul>
+        {% for order in cooking_orders %}
+            <li>Order ID: {{ order.id }} | Table: {{ order.table }} | Total Price: {{ order.totalPrice }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Ready to Serve Orders</h2>
+    <ul>
+        {% for order in ready_to_serve_orders %}
+            <li>Order ID: {{ order.id }} | Table: {{ order.table }} | Total Price: {{ order.totalPrice }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
