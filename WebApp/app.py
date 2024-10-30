@@ -1,5 +1,6 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 import json
+import os 
 from datetime import datetime
 from Classes.Topping import Topping
 from Classes.Product import Product
@@ -20,6 +21,7 @@ def load_data():
         beverages_data = json.load(f)
 
 
+
     toppings = {topping["name"]: Topping(**topping) for topping in toppings_data}
 
     pizzas = []
@@ -30,6 +32,16 @@ def load_data():
     beverages = [Beverage(**beverage) for beverage in beverages_data]
 
     return toppings, pizzas, beverages
+def save_order(order_data):
+    if os.path.exists('orders.json'):
+        with open('currentOrders.json', 'r+') as f:
+            orders = json.load(f)
+            orders.append(order_data)
+            f.seek(0)
+            json.dump(orders, f, indent=2)
+    else:
+        with open('orders.json', 'w') as f:
+            json.dump([order_data], f, indent=2)
 
 toppings, pizzas, beverages = load_data()
 
@@ -53,6 +65,12 @@ def make_order():
     order = Order(1, 4, current_time, items, sum(item.price for item in items), "TO DO")
 
     return jsonify(order.__dict__)
+
+@app.route('/add_to_order', methods=['POST'])
+def add_to_order():
+    data = request.json
+    save_order(data)
+    return jsonify({"status": "success", "message": "Pizza added to order!"})
 
 if __name__ == '__main__':
     app.run(port=8080)

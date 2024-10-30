@@ -4,38 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/stylesheet.css">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
     <title>Pizza Menu</title>
 </head>
 <body>
     <header>
-            <div class="headerback">
-                <img class="Logo" src="../static/images/Logo.png" alt="Logo">
-                <a href="/cart" class="cart-item">
-                     <img class="cart" src="../static/images/cartn.png" alt="cart_symbol">
-                </a>
-                <a href="/" class="menu">
+        <div class="headerback">
+            <img class="Logo" src="../static/images/Logo.png" alt="Logo">
+            <a href="/cart" class="cart-item">
+                <img class="cart" src="../static/images/cartn.png" alt="cart_symbol">
+            </a>
+            <a href="/" class="menu">
                 <img class="back" src="../static/images/arrow-back.jpg" alt="home">
-                </a>
-            </div>
+            </a>
+        </div>
     </header>
     <main>
         <div class="menu-header">
             <h1>Pizza Menu</h1>
-            <img class="search-icon" src="../static/images/searchicon.png" alt="Search">
+            <img class="search-icon" src="../static/images/seachi.jpg" alt="Search">
         </div>
         <div class="menu-items">
-            {% for pizza in pizzas %}
-                <div class="menu-item">
-                    <img class="pizzapep" src="../static/images/pizza1.png" alt="pizza">
-                    <h2>{{ pizza.name }}</h2>
-                    <p>{{ pizza.description }}</p>
-                    <p>Price: €{{ pizza.price }}</p>
-                </div>
-            {% endfor %}
+            <ul id="pizzaList">
+                {% for pizza in pizzas %}
+                    <li class="menu-item"> <!-- Fixed structure here -->
+                        <img class="pizzapep" src="../static/images/pizza1.png" alt="pizza">
+                        <h2>{{ pizza.name }}</h2>
+                        <p>{{ pizza.description }}</p>
+                        <p>Price: €{{ pizza.price }}</p>
+                        <button onclick="addToOrder('{{ pizza.name }}', '{{ pizza.price }}')">Add to Order</button>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
     </main>
     <footer>
-    
+        <!-- Optional footer content -->
     </footer>
 </body>
 </html>
