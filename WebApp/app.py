@@ -93,7 +93,7 @@ class Order:
         self.status = "TO DO"
 
     def update_totalPrice(self):
-        totalPrice = sum(item.price for item in self.products)
+        self.totalPrice = sum(item.price for item in self.products)
 
     def add_product(self, product):
         self.products.append(product)
