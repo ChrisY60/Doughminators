@@ -11,7 +11,6 @@ from Classes.Order import Order
 app = Flask(__name__)
 app.secret_key = 'DoughminatorsKey'
 
-
 def load_data():
     with open("data/toppings.json") as f:
         toppings_data = json.load(f)
@@ -19,8 +18,6 @@ def load_data():
         pizzas_data = json.load(f)
     with open("data/beverages.json") as f:
         beverages_data = json.load(f)
-
-
 
     toppings = {topping["name"]: Topping(**topping) for topping in toppings_data}
 
@@ -32,6 +29,7 @@ def load_data():
     beverages = [Beverage(**beverage) for beverage in beverages_data]
 
     return toppings, pizzas, beverages
+
 def save_order(order_data):
     if os.path.exists('orders.json'):
         with open('orders.json', 'r+') as f:
@@ -43,6 +41,7 @@ def save_order(order_data):
         with open('orders.json', 'w') as f:
             json.dump([order_data], f, indent=2)
 
+# Load the data once at the start
 toppings, pizzas, beverages = load_data()
 
 @app.route("/")
@@ -64,7 +63,7 @@ def make_order():
 
     order = Order(1, 4, current_time, items, sum(item.price for item in items), "TO DO")
 
-    return jsonify(order._dict_)
+    return jsonify(order.to_dict())
 
 @app.route('/add_to_order', methods=['POST'])
 def add_to_order():
@@ -72,5 +71,19 @@ def add_to_order():
     save_order(data)
     return jsonify({"status": "success", "message": "Item added to order!"})
 
+@app.route("/cart")
+def cart():
+    try:
+        # Your code to read from orders.json
+        if os.path.exists('orders.json'):
+            with open('orders.json') as f:
+                orders = json.load(f)
+        else:
+            orders = []
+
+        return render_template('cart.html', items=orders)
+    except Exception as e:
+        print(f"Error loading orders: {e}")
+        return jsonify({"error": "Could not load orders."}), 500
 if __name__ == '__main__':
-    app.run(port=8080)
+    app.run(port=8080, debug=True)
