@@ -244,10 +244,9 @@ button :hover {
 }
 
 .pizza-image {
-    width: 100%;            /* Makes the image take up the full width of the container */
-    height: auto;           /* Maintains the aspect ratio */
-    max-width: 200px;       /* Sets a maximum width to prevent oversized images */
-    max-height: 200px;      /* Sets a maximum height for larger images */
-    object-fit: cover;      /* Ensures the image covers the container without stretching */
-    border-radius: 10px;    /* Optional: rounds the corners for a polished look */
+    width: 100%;            
+    max-width: 200px;      
+    max-height: 200px;      
+    object-fit: cover;      
+    border-radius: 10px;    
 }
