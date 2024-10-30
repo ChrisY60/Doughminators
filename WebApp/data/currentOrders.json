@@ -539,5 +539,141 @@
         ],
         "totalPrice": 12.5,
         "status": "TO DO"
+    },
+    {
+        "id": "eda10a10-d847-4e15-884f-358c45e81991",
+        "table": 4,
+        "datetime": "2024-10-30 15:53:14.507683",
+        "products": [
+            {
+                "name": "Spicy Meat Lover",
+                "price": 12.0,
+                "description": "Pepperoni, sausage, bacon, and jalapenos",
+                "imageURL": "/static/images/spicy_meat_lover.jpg",
+                "crust": "thick",
+                "base": "tomato",
+                "size": "large",
+                "toppings": [
+                    {
+                        "name": "Pepperoni",
+                        "price": 1.5,
+                        "description": "Spicy pepperoni slices"
+                    },
+                    {
+                        "name": "Sausage",
+                        "price": 1.25,
+                        "description": "Italian sausage slices"
+                    },
+                    {
+                        "name": "Bacon",
+                        "price": 1.75,
+                        "description": "Crispy bacon pieces"
+                    },
+                    {
+                        "name": "Jalapenos",
+                        "price": 0.6,
+                        "description": "Spicy jalapeno peppers"
+                    }
+                ]
+            },
+            {
+                "name": "Water",
+                "price": 1.5,
+                "description": "Bottled mineral water",
+                "imageURL": "../static/images/water.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 13.5,
+        "status": "TO DO"
+    },
+    {
+        "id": "998c4499-616a-43a6-8186-d9c840033c48",
+        "table": 4,
+        "datetime": "2024-10-30 15:53:16.062014",
+        "products": [
+            {
+                "name": "Spicy Meat Lover",
+                "price": 12.0,
+                "description": "Pepperoni, sausage, bacon, and jalapenos",
+                "imageURL": "/static/images/spicy_meat_lover.jpg",
+                "crust": "thick",
+                "base": "tomato",
+                "size": "large",
+                "toppings": [
+                    {
+                        "name": "Pepperoni",
+                        "price": 1.5,
+                        "description": "Spicy pepperoni slices"
+                    },
+                    {
+                        "name": "Sausage",
+                        "price": 1.25,
+                        "description": "Italian sausage slices"
+                    },
+                    {
+                        "name": "Bacon",
+                        "price": 1.75,
+                        "description": "Crispy bacon pieces"
+                    },
+                    {
+                        "name": "Jalapenos",
+                        "price": 0.6,
+                        "description": "Spicy jalapeno peppers"
+                    }
+                ]
+            },
+            {
+                "name": "Orange Juice",
+                "price": 3.0,
+                "description": "Freshly squeezed orange juice",
+                "imageURL": "../static/images/orange-juice.png",
+                "milliliters": 400
+            }
+        ],
+        "totalPrice": 15.0,
+        "status": "TO DO"
+    },
+    {
+        "id": "d366c706-687c-4676-8e50-8d16a113b571",
+        "table": 4,
+        "datetime": "2024-10-30 15:53:17.485505",
+        "products": [
+            {
+                "name": "Hawaiian",
+                "price": 9.5,
+                "description": "A tropical mix of ham and pineapple",
+                "imageURL": "/static/images/hawaiian.jpg",
+                "crust": "thin",
+                "base": "tomato",
+                "size": "medium",
+                "toppings": [
+                    {
+                        "name": "Pineapple",
+                        "price": 1.0,
+                        "description": "Sweet pineapple chunks"
+                    },
+                    {
+                        "name": "Ham",
+                        "price": 1.25,
+                        "description": "Sliced ham"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Cola-Coca",
+                "price": 2.0,
+                "description": "Refreshing Coke",
+                "imageURL": "../static/images/cola.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 11.5,
+        "status": "TO DO"
     }
 ]

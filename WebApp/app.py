@@ -13,6 +13,8 @@ from Classes.Order import Order
 app = Flask(__name__)
 app.secret_key = 'DoughminatorsKey'
 
+
+
 def load_data():
     with open("data/toppings.json") as f:
         toppings_data = json.load(f)
@@ -32,27 +34,49 @@ def load_data():
 
     return toppings, pizzas, beverages
 
-def save_order(order_data):
+
+import os
+import json
+
+
+def update_cart(order_data):
     item_name = order_data.get("name")
     matching_item = next((pizza for pizza in pizzas if pizza.name == item_name), None) or \
                     next((bev for bev in beverages if bev.name == item_name), None)
-    
+
     if matching_item:
         order_data["imageURL"] = matching_item.imageURL
         order_data["description"] = matching_item.description
+        order_data["price"] = matching_item.price
 
-    # Append to orders.json
-    if os.path.exists('orders.json'):
-        with open('orders.json', 'r+') as f:
+        if hasattr(matching_item, 'crust'):
+            order_data["crust"] = matching_item.crust
+        if hasattr(matching_item, 'base'):
+            order_data["base"] = matching_item.base
+        if hasattr(matching_item, 'size'):
+            order_data["size"] = matching_item.size
+        if hasattr(matching_item, 'toppings'):
+            order_data["toppings"] = [{
+                "name": topping.name,
+                "price": topping.price,
+                "description": topping.description
+            } for topping in matching_item.toppings]
+        if hasattr(matching_item, 'milliliters'):
+            order_data["milliliters"] = matching_item.milliliters
+
+    if os.path.exists('cart.json'):
+        with open('cart.json', 'r+') as f:
             orders = json.load(f)
             orders.append(order_data)
             f.seek(0)
             json.dump(orders, f, indent=2)
     else:
-        with open('orders.json', 'w') as f:
+        with open('cart.json', 'w') as f:
             json.dump([order_data], f, indent=2)
 
+
 toppings, pizzas, beverages = load_data()
+
 
 @app.route("/")
 def index():
@@ -68,6 +92,7 @@ def beverages_page():
 
 @app.route("/makeOrder")
 def make_order():
+
     selected_pizza = random.choice(pizzas)
     selected_beverage = random.choice(beverages)
     items = [selected_pizza, selected_beverage]
@@ -115,18 +140,16 @@ def get_orders_for_kitchen():
 def add_to_order():
     data = request.json
 
-    # Generate a unique ID for the item being added to the cart
     data["id"] = str(uuid.uuid4())
 
-    # Save the item to orders.json
-    save_order(data)
+    update_cart(data)
     return jsonify({"status": "success", "message": "Item added to order!"})
 
 @app.route("/cart")
 def cart():
     try:
-        if os.path.exists('orders.json'):
-            with open('orders.json') as f:
+        if os.path.exists('cart.json'):
+            with open('cart.json') as f:
                 orders = json.load(f)
         else:
             orders = []
@@ -153,14 +176,14 @@ def remove_item():
     item_id = request.json.get("id")  # Get the item ID from the request
 
     try:
-        # Load the current orders from orders.json
-        with open('orders.json', 'r+') as f:
+        # Load the current orders from cart.json
+        with open('cart.json', 'r+') as f:
             orders = json.load(f)
 
             # Filter out the item to remove based on the provided ID
             orders = [order for order in orders if order.get("id") != item_id]
 
-            # Write the updated list back to orders.json
+            # Write the updated list back to cart.json
             f.seek(0)
             f.truncate()
             json.dump(orders, f, indent=2)
