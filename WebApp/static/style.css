@@ -50,13 +50,13 @@ body, html {
 .column2 {
     flex: 1;
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 20px;
+    flex-direction: column; 
+    align-items: flex-start; 
+    justify-content: flex-start; 
+    padding: 20px;
     color: white;
     font-size: 1.5em;
-    text-align: center;
-
+    text-align: left; 
 }
 /* Background colors for each column */
 .waiting-list {
