@@ -27,12 +27,12 @@
                     <div class="item-details">
                         <h3>{{ item.name }}</h3>
                         <button class="modify-btn">Modify</button>
-                        <button class="remove-btn" onclick="removeItem('{{ item.id }}')">Remove</button>
+                        <button id="remove-btn" onclick="removeItem('{{ item.id }}')">Remove</button>
                     </div>
                     <div class="item-quantity">
-                        <button class="quantity-btn">+</button>
+                        <button class="quantity-btn vertical-quantity-btn">+</button>
                         <span class="quantity">{{ item.quantity or 1 }}</span>
-                        <button class="quantity-btn">-</button>
+                        <button class="quantity-btn vertical-quantity-btn">-</button>
                     </div>
                     <div class="item-price">
                         €{{ item.price }}
@@ -42,7 +42,6 @@
         </div>
         <button class="order-now-btn" onclick="openModal()">Order Now</button>
     </main>
-
     <!-- Order Confirmation Modal -->
     <div id="orderModal" class="modal">
         <div class="modal-content">
@@ -54,7 +53,6 @@
             </div>
         </div>
     </div>
-
     <!-- Scripts -->
     <script>
         // Define makeOrderUrl only once globally
