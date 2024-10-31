@@ -43,6 +43,7 @@ main>aside {
         border-bottom: 10px solid green;
         background-color: white;
         margin-bottom: -100px;
+        box-shadow: 1px -3px 20px;
     }
 
     .Logo {
