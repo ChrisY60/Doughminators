@@ -26,7 +26,7 @@
                     <div class="item-details">
                         <h3>{{ item.name }}</h3>
                         <button class="modify-btn">Modify</button>
-                        <button class="remove-btn" onclick="removeItem('{{ item.id }}')">Remove</button> <!-- Remove Button -->
+                        <button class="remove-btn" onclick="removeItem('{{ item.id }}')">Remove</button>
                     </div>
                     <div class="item-quantity">
                         <button class="quantity-btn">+</button>
@@ -39,11 +39,14 @@
                 </div>
             {% endfor %}
         </div>
-         <button class="order-now-btn" onclick="window.location.href='{{ url_for('make_order') }}'">Order Now</button>
-
+        <button class="order-now-btn" onclick="window.location.href = makeOrderUrl">Order Now</button>
     </main>
-    
-    <!-- Link to the external JavaScript file -->
+
+    <script>
+        const makeOrderUrl = "{{ url_for('make_order') }}";
+    </script>
     <script src="{{ url_for('static', filename='cart.js') }}"></script>
+    <footer id="footreddd">
+    </footer>
 </body>
 </html>

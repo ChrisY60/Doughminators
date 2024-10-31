@@ -2,7 +2,7 @@ from flask import Flask, render_template, jsonify, request
 import json
 import os
 import random
-import uuid  # Import uuid to generate unique IDs
+import uuid
 from datetime import datetime
 from Classes.Topping import Topping
 from Classes.Product import Product

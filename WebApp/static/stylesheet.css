@@ -250,12 +250,6 @@ button :hover {
     border-radius: 10px;    
 }
 
-#footred {
-    background-color: #e5533c;               
-    padding: 20px;                                  
-    bottom: 0;                   
-    width: 80%;                 
-}
 
 /*cart section.......................................*/
 
@@ -379,6 +373,7 @@ button :hover {
     border-radius: 8px;
     cursor: pointer;
     margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 .cart-icon {
@@ -468,3 +463,14 @@ button :hover {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+
+  #footredd {
+    background-color: #e5533c;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10; /* Ensures the footer is on top */
+    text-align: center;
+    color: rgb(255, 0, 0);
+}

@@ -320,5 +320,145 @@
         ],
         "totalPrice": 40,
         "status": "TO DO"
+    },
+    {
+        "id": "a0cfd020-a608-4107-9ac1-4b7b650e0204",
+        "table": 4,
+        "datetime": "2024-10-30 23:39:32.963372",
+        "products": [
+            {
+                "name": "Pepperoni Feast",
+                "price": 10.0,
+                "description": "Loaded with pepperoni and cheese",
+                "imageURL": "/static/images/pepperoni_feast.jpg",
+                "crust": "thick",
+                "base": "tomato",
+                "size": "large",
+                "toppings": [
+                    {
+                        "name": "Pepperoni",
+                        "price": 1.5,
+                        "description": "Spicy pepperoni slices"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Hawaiian",
+                "price": 9.5,
+                "description": "A tropical mix of ham and pineapple",
+                "imageURL": "/static/images/hawaiian.jpg",
+                "crust": "thin",
+                "base": "tomato",
+                "size": "medium",
+                "toppings": [
+                    {
+                        "name": "Pineapple",
+                        "price": 1.0,
+                        "description": "Sweet pineapple chunks"
+                    },
+                    {
+                        "name": "Ham",
+                        "price": 1.25,
+                        "description": "Sliced ham"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Cola-Coca",
+                "price": 2.0,
+                "description": "Refreshing Coke",
+                "imageURL": "../static/images/cola.png",
+                "milliliters": 500
+            },
+            {
+                "name": "Sprite",
+                "price": 2.0,
+                "description": "Lemon-lime flavored soft drink",
+                "imageURL": "../static/images/sprite.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 40,
+        "status": "TO DO"
+    },
+    {
+        "id": "7ab4cf11-199e-462b-90ae-f42c6d25b5b2",
+        "table": 4,
+        "datetime": "2024-10-31 10:53:27.297589",
+        "products": [
+            {
+                "name": "Pepperoni Feast",
+                "price": 10.0,
+                "description": "Loaded with pepperoni and cheese",
+                "imageURL": "/static/images/pepperoni_feast.jpg",
+                "crust": "thick",
+                "base": "tomato",
+                "size": "large",
+                "toppings": [
+                    {
+                        "name": "Pepperoni",
+                        "price": 1.5,
+                        "description": "Spicy pepperoni slices"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Hawaiian",
+                "price": 9.5,
+                "description": "A tropical mix of ham and pineapple",
+                "imageURL": "/static/images/hawaiian.jpg",
+                "crust": "thin",
+                "base": "tomato",
+                "size": "medium",
+                "toppings": [
+                    {
+                        "name": "Pineapple",
+                        "price": 1.0,
+                        "description": "Sweet pineapple chunks"
+                    },
+                    {
+                        "name": "Ham",
+                        "price": 1.25,
+                        "description": "Sliced ham"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Cola-Coca",
+                "price": 2.0,
+                "description": "Refreshing Coke",
+                "imageURL": "../static/images/cola.png",
+                "milliliters": 500
+            },
+            {
+                "name": "Sprite",
+                "price": 2.0,
+                "description": "Lemon-lime flavored soft drink",
+                "imageURL": "../static/images/sprite.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 40,
+        "status": "TO DO"
     }
 ]

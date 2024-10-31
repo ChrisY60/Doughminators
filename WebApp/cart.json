@@ -47,21 +47,5 @@
         "description": "Mozzarella cheese"
       }
     ]
-  },
-  {
-    "name": "Cola-Coca",
-    "price": 2.0,
-    "id": "8fd6ab71-8d67-4a1e-b876-a7c310c5a41c",
-    "imageURL": "../static/images/cola.png",
-    "description": "Refreshing Coke",
-    "milliliters": 500
-  },
-  {
-    "name": "Sprite",
-    "price": 2.0,
-    "id": "88f4f250-98f2-4d6c-bc8a-a4a9df2b9582",
-    "imageURL": "../static/images/sprite.png",
-    "description": "Lemon-lime flavored soft drink",
-    "milliliters": 500
   }
 ]
