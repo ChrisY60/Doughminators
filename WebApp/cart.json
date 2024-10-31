@@ -1,27 +1,5 @@
 [
   {
-    "name": "Pepperoni Feast",
-    "price": 10.0,
-    "id": "f564e720-5506-4c80-b096-95ec226d4f61",
-    "imageURL": "/static/images/pepperoni_feast.jpg",
-    "description": "Loaded with pepperoni and cheese",
-    "crust": "thick",
-    "base": "tomato",
-    "size": "large",
-    "toppings": [
-      {
-        "name": "Pepperoni",
-        "price": 1.5,
-        "description": "Spicy pepperoni slices"
-      },
-      {
-        "name": "Extra Cheese",
-        "price": 1.0,
-        "description": "Mozzarella cheese"
-      }
-    ]
-  },
-  {
     "name": "Margherita",
     "price": 8.0,
     "id": "adf4fdb2-d35c-4c7e-95f5-c5bc510e30ea",
@@ -59,6 +37,14 @@
     "name": "Cola-Coca",
     "price": 2.0,
     "id": "97bb91c8-cc05-4215-ab8b-6980fe4ff071",
+    "imageURL": "../static/images/cola.png",
+    "description": "Refreshing Coke",
+    "milliliters": 500
+  },
+  {
+    "name": "Cola-Coca",
+    "price": 2.0,
+    "id": "f799e5fd-f82f-4920-b823-683309a582a8",
     "imageURL": "../static/images/cola.png",
     "description": "Refreshing Coke",
     "milliliters": 500
