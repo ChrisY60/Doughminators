@@ -20,32 +20,5 @@
         "description": "Mozzarella cheese"
       }
     ]
-  },
-  {
-    "name": "Hawaiian",
-    "price": 9.5,
-    "id": "80f0a7ca-a5d7-4aea-b953-656a0e3fbf79",
-    "imageURL": "/static/images/hawaiian.jpg",
-    "description": "A tropical mix of ham and pineapple",
-    "crust": "thin",
-    "base": "tomato",
-    "size": "medium",
-    "toppings": [
-      {
-        "name": "Pineapple",
-        "price": 1.0,
-        "description": "Sweet pineapple chunks"
-      },
-      {
-        "name": "Ham",
-        "price": 1.25,
-        "description": "Sliced ham"
-      },
-      {
-        "name": "Extra Cheese",
-        "price": 1.0,
-        "description": "Mozzarella cheese"
-      }
-    ]
   }
 ]
