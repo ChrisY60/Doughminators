@@ -233,8 +233,21 @@ h1 {
     width: 50%;
     margin: 0 auto ;
     margin-top: 20px;
+    
 }
 
+.bevh {
+    text-align: center;
+    background-color: rgb(240,198,198);
+    border-radius:20px ;
+    box-shadow: 5px 5px 5px rgb(113, 113, 113);
+    width: 50%;
+    margin: 0 auto ;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 80px;
+    
+}
 .menu-items {
     display: flex;
     flex-direction: column; 
@@ -274,7 +287,15 @@ h1 {
 
 
 .search-icon {
-    width: 60px; 
+    width: 24%; 
+    margin-top: -88px;
+    margin-left: 285px; 
+    background-color: white;
+    border-radius: 100px;
+}
+
+.search-iconn {
+    width: 19%; 
     margin-top: -80px;
     margin-left: 325px; 
     background-color: white;
@@ -465,7 +486,7 @@ button :hover {
     border-radius: 8px;
     cursor: pointer;
     margin-top: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 55px;
 }
 
 .cart-icon {
@@ -536,14 +557,15 @@ button :hover {
 }
 
 #footreddd {
-    background-color: #e5533c;
-    padding: 20px;
+    position:fixed;
     bottom: 0;
     width: 90%;
-    z-index: 10; /* Ensures the footer is on top */
+    background-color: #FF6347; /* Customize footer color */
+    padding: 20px;
     text-align: center;
-    color: rgb(255, 0, 0);
+    color: white;
 }
+
 
 /* Modal styles */
 .modal {
