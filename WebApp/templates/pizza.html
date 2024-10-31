@@ -27,7 +27,8 @@
         <div class="menu-items">
             <ul id="pizzaList">
                 {% for pizza in pizzas %}
-                    <li class="menu-item"> <!-- Fixed structure here -->
+                    <li class="menu-item">
+                        <a class="info-link" href="/pizzaInformation/{{ pizza.name }}"></a>
                         <img class="pizza-image" src="{{ pizza.imageURL }}" alt="Image of {{ pizza.name }}">
                         <h2>{{ pizza.name }}</h2>
                         <p>{{ pizza.description }}</p>
