@@ -200,6 +200,18 @@ def cart():
         print(f"Error loading orders: {e}")
         return jsonify({"error": "Could not load orders."}), 500
 
+@app.route("/pizzaInformation")
+@app.route("/pizzaInformation/<pizza_name>")
+def pizza_information(pizza_name):
+    found_pizza = None
+    for pizza in pizzas:
+        if pizza.name == pizza_name:
+            found_pizza = pizza
+    if found_pizza:
+        return render_template("pizzaInfo.html", pizza=found_pizza)
+    else:
+        return "Pizza not found", 400
+
 
 @app.route('/remove_item', methods=['POST'])
 def remove_item():
