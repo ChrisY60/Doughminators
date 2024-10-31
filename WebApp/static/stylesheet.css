@@ -224,8 +224,21 @@ h1 {
     width: 50%;
     margin: 0 auto ;
     margin-top: 20px;
+    
 }
 
+.bevh {
+    text-align: center;
+    background-color: rgb(240,198,198);
+    border-radius:20px ;
+    box-shadow: 5px 5px 5px rgb(113, 113, 113);
+    width: 50%;
+    margin: 0 auto ;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 80px;
+    
+}
 .menu-items {
     display: flex;
     flex-direction: column; 
@@ -248,9 +261,17 @@ h1 {
 
 
 .search-icon {
-    width: 60px; 
+    width: 24%; 
+    margin-top: -88px;
+    margin-left: 285px; 
+    background-color: white;
+    border-radius: 100px;
+}
+
+.search-iconn {
+    width: 19%; 
     margin-top: -80px;
-    margin-left: 325px; 
+    margin-left: 295px; 
     background-color: white;
     border-radius: 100px;
 }
