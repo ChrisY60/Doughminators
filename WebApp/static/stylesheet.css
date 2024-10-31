@@ -478,8 +478,7 @@ button :hover {
 
 #footreddd {
     background-color: #e5533c;
-    padding: 30px;
-    position: fixed;
+    padding: 20px;
     bottom: 0;
     width: 90%;
     z-index: 10; /* Ensures the footer is on top */
