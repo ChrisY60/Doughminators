@@ -110,6 +110,14 @@ main>aside {
     position: relative;
     width: 100%;
 }
+.image-text {
+    position: absolute;
+    top: 65px; 
+    left: 40px; 
+    color: rgb(0, 0, 0); 
+    font-size: 30px;
+    font-weight: bold;
+}
 
 .image-text1 {
     position: absolute;
