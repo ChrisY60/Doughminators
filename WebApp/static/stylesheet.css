@@ -555,6 +555,7 @@ button :hover {
     z-index: 10; /* Ensures the footer is on top */
     text-align: center;
     color: rgb(255, 0, 0);
+    position: fixed;
 }
 
 /* Modal styles */
