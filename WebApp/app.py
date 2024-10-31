@@ -139,6 +139,9 @@ def make_order():
     with open('data/currentOrders.json', 'w') as file:
         json.dump(current_orders, file, indent=4)
 
+    with open('cart.json', 'w') as file:
+        json.dump([], file, indent=4)
+
     return render_template("OrderConfirmed.html", items=products, total_price=order.totalPrice)
 
 @app.route("/getOrdersForKitchen")
@@ -215,17 +218,14 @@ def pizza_information(pizza_name):
 
 @app.route('/remove_item', methods=['POST'])
 def remove_item():
-    item_id = request.json.get("id")  # Get the item ID from the request
+    item_id = request.json.get("id")
 
     try:
-        # Load the current orders from cart.json
         with open('cart.json', 'r+') as f:
             orders = json.load(f)
 
-            # Filter out the item to remove based on the provided ID
             orders = [order for order in orders if order.get("id") != item_id]
 
-            # Write the updated list back to cart.json
             f.seek(0)
             f.truncate()
             json.dump(orders, f, indent=2)
