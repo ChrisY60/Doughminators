@@ -444,7 +444,7 @@ button :hover {
     top: 0;
     left: 0;
     background: rgb(0,128,0);
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.7) 92%, rgba(0,0,0,0.0) 95%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.7) 92%, rgba(0,0,0,0.0) 94%);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
