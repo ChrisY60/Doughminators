@@ -7,6 +7,16 @@
     <title>Home page</title>
 </head>
 <body id="homes">
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+    
     <header>
         <div class="headerback">
            
@@ -14,11 +24,11 @@
             <a href="/cart" class="cart-item">
                  <img class="cart" src="../static/images/cartn.png" alt="cart_symbol">
             </a>
-            <a href="/menu" class="menu">
-            <img class="menu" src="../static/images/menu1.jpg" alt="menu">
-            </a>
+            <span style="cursor: pointer" onclick = "openNav()"><img class="menu" src="../static/images/menu1.jpg" alt="menu">
+            </span>
         </div>
     </header>
+    
     <main>
         <aside class=""></aside>
         <p class="welcome">WELCOME TO MARIO AND LUIGI'S RESTAURANT</p>
@@ -52,7 +62,13 @@
             </p>
             </div>
         </section>
-    </main>    
+    </main>    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
     <footer>
         <p class="Social">Social Media</p>
         <p>FB: MarioNLuigi</p>
