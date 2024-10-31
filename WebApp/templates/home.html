@@ -7,6 +7,16 @@
     <title>Home page</title>
 </head>
 <body id="homes">
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+    
     <header>
         <div class="headerback">
            
@@ -14,11 +24,11 @@
             <a href="/cart" class="cart-item">
                  <img class="cart" src="../static/images/cartn.png" alt="cart_symbol">
             </a>
-            <a href="/menu" class="menu">
-            <img class="menu" src="../static/images/menu1.jpg" alt="menu">
-            </a>
+            <span style="cursor: pointer" onclick = "openNav()"><img class="menu" src="../static/images/menu1.jpg" alt="menu">
+            </span>
         </div>
     </header>
+    
     <main>
         <aside class=""></aside>
         <p class="welcome">WELCOME TO MARIO AND LUIGI'S RESTAURANT</p>
@@ -40,7 +50,7 @@
         </div>
         <section>
             <p class="loc">Locations</p>
-            <img src="../static/images/location.png" alt="location">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.425316331741!2d5.465901776511716!3d51.45034711486983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6d9006c506acd%3A0x96bd53deaa27aa28!2spizzeria%20Mario%20and%20Luigi!5e0!3m2!1snl!2snl!4v1730369370402!5m2!1snl!2snl" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <p>Rating on Uber Eats</p>
             <img class="review" src="../static/images/reviewn.png" alt="review">
 
@@ -52,7 +62,13 @@
             </p>
             </div>
         </section>
-    </main>    
+    </main>    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
     <footer>
         <p class="Social">Social Media</p>
         <p>FB: MarioNLuigi</p>
