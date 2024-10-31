@@ -119,6 +119,20 @@ main>aside {
     font-weight: bold;
 }
 
+.pizza-info-image {
+    width: 80vw;
+    min-width: 300px;
+    height: auto;
+}
+.info-centered {
+    text-align: center;
+
+}
+
+.info-list-toppings {
+    list-style-type: none;
+}
+
 .image-text1 {
     position: absolute;
     top: 65px; 
@@ -135,7 +149,7 @@ main>aside {
     color: rgb(0, 0, 0); 
     font-size: 30px;
     font-weight: bold;
-    z-index: 2; 
+    z-index: 1; 
 }
 
 .pizzaimg, .bevimg {
@@ -447,7 +461,8 @@ button :hover {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgb(51, 179, 72);
+    background: rgb(0,128,0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.7) 92%, rgba(0,0,0,0.0) 95%);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
