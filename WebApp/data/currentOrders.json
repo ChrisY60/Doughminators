@@ -1141,5 +1141,74 @@
         ],
         "totalPrice": 40,
         "status": "TO DO"
+    },
+    {
+        "id": "c9e50929-ad19-4d16-b7f8-7e67ae967735",
+        "table": 4,
+        "datetime": "2024-10-31 14:13:16.851480",
+        "products": [
+            {
+                "name": "Pepperoni Feast",
+                "price": 10.0,
+                "description": "Loaded with pepperoni and cheese",
+                "imageURL": "/static/images/pepperoni_feast.jpg",
+                "crust": "thick",
+                "base": "tomato",
+                "size": "large",
+                "toppings": [
+                    {
+                        "name": "Pepperoni",
+                        "price": 1.5,
+                        "description": "Spicy pepperoni slices"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Margherita",
+                "price": 8.0,
+                "description": "Classic cheese and tomato pizza",
+                "imageURL": "/static/images/margherita.jpg",
+                "crust": "thin",
+                "base": "tomato",
+                "size": "medium",
+                "toppings": [
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Margherita",
+                "price": 8.0,
+                "description": "Classic cheese and tomato pizza",
+                "imageURL": "/static/images/margherita.jpg",
+                "crust": "thin",
+                "base": "tomato",
+                "size": "medium",
+                "toppings": [
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Cola-Coca",
+                "price": 2.0,
+                "description": "Refreshing Coke",
+                "imageURL": "../static/images/cola.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 40,
+        "status": "TO DO"
     }
 ]
