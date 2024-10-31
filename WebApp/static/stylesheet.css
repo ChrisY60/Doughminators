@@ -119,6 +119,20 @@ main>aside {
     font-weight: bold;
 }
 
+.pizza-info-image {
+    width: 80vw;
+    min-width: 300px;
+    height: auto;
+}
+.info-centered {
+    text-align: center;
+
+}
+
+.info-list-toppings {
+    list-style-type: none;
+}
+
 .image-text1 {
     position: absolute;
     top: 65px; 
