@@ -477,7 +477,7 @@ button :hover {
     border-radius: 8px;
     cursor: pointer;
     margin-top: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 55px;
 }
 
 .cart-icon {
@@ -548,15 +548,15 @@ button :hover {
 }
 
 #footreddd {
-    background-color: #e5533c;
-    padding: 20px;
+    position:fixed;
     bottom: 0;
     width: 90%;
-    z-index: 10; /* Ensures the footer is on top */
+    background-color: #FF6347; /* Customize footer color */
+    padding: 20px;
     text-align: center;
-    color: rgb(255, 0, 0);
-    position: fixed;
+    color: white;
 }
+
 
 /* Modal styles */
 .modal {
