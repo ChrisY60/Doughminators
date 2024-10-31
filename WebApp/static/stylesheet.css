@@ -286,7 +286,7 @@ h1 {
 }
 
 .search-iconn {
-    width: 19%; 
+    width: 17%; 
     margin-top: -80px;
     margin-left: 325px; 
     background-color: white;
@@ -624,3 +624,4 @@ button :hover {
     font-size: 20px; /* Adjust as needed */
     padding: 5px; /* Adjust size of the button */
 }
+
