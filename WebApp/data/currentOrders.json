@@ -320,5 +320,265 @@
         ],
         "totalPrice": 40,
         "status": "TO DO"
+    },
+    {
+        "id": "a0cfd020-a608-4107-9ac1-4b7b650e0204",
+        "table": 4,
+        "datetime": "2024-10-30 23:39:32.963372",
+        "products": [
+            {
+                "name": "Pepperoni Feast",
+                "price": 10.0,
+                "description": "Loaded with pepperoni and cheese",
+                "imageURL": "/static/images/pepperoni_feast.jpg",
+                "crust": "thick",
+                "base": "tomato",
+                "size": "large",
+                "toppings": [
+                    {
+                        "name": "Pepperoni",
+                        "price": 1.5,
+                        "description": "Spicy pepperoni slices"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Hawaiian",
+                "price": 9.5,
+                "description": "A tropical mix of ham and pineapple",
+                "imageURL": "/static/images/hawaiian.jpg",
+                "crust": "thin",
+                "base": "tomato",
+                "size": "medium",
+                "toppings": [
+                    {
+                        "name": "Pineapple",
+                        "price": 1.0,
+                        "description": "Sweet pineapple chunks"
+                    },
+                    {
+                        "name": "Ham",
+                        "price": 1.25,
+                        "description": "Sliced ham"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Cola-Coca",
+                "price": 2.0,
+                "description": "Refreshing Coke",
+                "imageURL": "../static/images/cola.png",
+                "milliliters": 500
+            },
+            {
+                "name": "Sprite",
+                "price": 2.0,
+                "description": "Lemon-lime flavored soft drink",
+                "imageURL": "../static/images/sprite.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 40,
+        "status": "TO DO"
+    },
+    {
+        "id": "7ab4cf11-199e-462b-90ae-f42c6d25b5b2",
+        "table": 4,
+        "datetime": "2024-10-31 10:53:27.297589",
+        "products": [
+            {
+                "name": "Pepperoni Feast",
+                "price": 10.0,
+                "description": "Loaded with pepperoni and cheese",
+                "imageURL": "/static/images/pepperoni_feast.jpg",
+                "crust": "thick",
+                "base": "tomato",
+                "size": "large",
+                "toppings": [
+                    {
+                        "name": "Pepperoni",
+                        "price": 1.5,
+                        "description": "Spicy pepperoni slices"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Hawaiian",
+                "price": 9.5,
+                "description": "A tropical mix of ham and pineapple",
+                "imageURL": "/static/images/hawaiian.jpg",
+                "crust": "thin",
+                "base": "tomato",
+                "size": "medium",
+                "toppings": [
+                    {
+                        "name": "Pineapple",
+                        "price": 1.0,
+                        "description": "Sweet pineapple chunks"
+                    },
+                    {
+                        "name": "Ham",
+                        "price": 1.25,
+                        "description": "Sliced ham"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Cola-Coca",
+                "price": 2.0,
+                "description": "Refreshing Coke",
+                "imageURL": "../static/images/cola.png",
+                "milliliters": 500
+            },
+            {
+                "name": "Sprite",
+                "price": 2.0,
+                "description": "Lemon-lime flavored soft drink",
+                "imageURL": "../static/images/sprite.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 40,
+        "status": "TO DO"
+    },
+    {
+        "id": "92df4a6f-bbd8-402d-a0d2-43c687fa8f72",
+        "table": 4,
+        "datetime": "2024-10-31 11:55:32.560605",
+        "products": [
+            {
+                "name": "Pepperoni Feast",
+                "price": 10.0,
+                "description": "Loaded with pepperoni and cheese",
+                "imageURL": "/static/images/pepperoni_feast.jpg",
+                "crust": "thick",
+                "base": "tomato",
+                "size": "large",
+                "toppings": [
+                    {
+                        "name": "Pepperoni",
+                        "price": 1.5,
+                        "description": "Spicy pepperoni slices"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            }
+        ],
+        "totalPrice": 40,
+        "status": "TO DO"
+    },
+    {
+        "id": "6c5f8cdc-0c4f-40aa-9ed2-938a6df4eaf1",
+        "table": 4,
+        "datetime": "2024-10-31 11:55:39.549759",
+        "products": [
+            {
+                "name": "Pepperoni Feast",
+                "price": 10.0,
+                "description": "Loaded with pepperoni and cheese",
+                "imageURL": "/static/images/pepperoni_feast.jpg",
+                "crust": "thick",
+                "base": "tomato",
+                "size": "large",
+                "toppings": [
+                    {
+                        "name": "Pepperoni",
+                        "price": 1.5,
+                        "description": "Spicy pepperoni slices"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            }
+        ],
+        "totalPrice": 40,
+        "status": "TO DO"
+    },
+    {
+        "id": "36394cd8-0f5f-4a9d-b9b5-9d700c7c0bb8",
+        "table": 4,
+        "datetime": "2024-10-31 11:56:17.423957",
+        "products": [
+            {
+                "name": "Pepperoni Feast",
+                "price": 10.0,
+                "description": "Loaded with pepperoni and cheese",
+                "imageURL": "/static/images/pepperoni_feast.jpg",
+                "crust": "thick",
+                "base": "tomato",
+                "size": "large",
+                "toppings": [
+                    {
+                        "name": "Pepperoni",
+                        "price": 1.5,
+                        "description": "Spicy pepperoni slices"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            }
+        ],
+        "totalPrice": 40,
+        "status": "TO DO"
+    },
+    {
+        "id": "49e1c598-15a7-4a11-9c5e-c5aae9360b5d",
+        "table": 4,
+        "datetime": "2024-10-31 12:07:03.282995",
+        "products": [
+            {
+                "name": "Pepperoni Feast",
+                "price": 10.0,
+                "description": "Loaded with pepperoni and cheese",
+                "imageURL": "/static/images/pepperoni_feast.jpg",
+                "crust": "thick",
+                "base": "tomato",
+                "size": "large",
+                "toppings": [
+                    {
+                        "name": "Pepperoni",
+                        "price": 1.5,
+                        "description": "Spicy pepperoni slices"
+                    },
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            }
+        ],
+        "totalPrice": 40,
+        "status": "TO DO"
     }
 ]
