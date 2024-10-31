@@ -135,7 +135,7 @@ main>aside {
     color: rgb(0, 0, 0); 
     font-size: 30px;
     font-weight: bold;
-    z-index: 2; 
+    z-index: 1; 
 }
 
 .pizzaimg, .bevimg {
@@ -429,7 +429,8 @@ button :hover {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgb(51, 179, 72);
+    background: rgb(0,128,0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 45%, rgba(0,0,0,0.7) 80%);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
