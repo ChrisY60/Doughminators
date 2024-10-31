@@ -17,8 +17,7 @@ body {
     
 }
 main>aside {
-    border-top: 10px solid green;
-    margin-top: -15px;
+    margin-top: -10px;
     background-image: url("../static/images/family.png");
     height: 210px;
     border-bottom: 10px solid rgb(255,0, 0);
@@ -35,6 +34,7 @@ main>aside {
     .headerback {
         justify-content: center;
         position: relative;
+        border-bottom: 10px solid green;
     }
 
     .Logo {
@@ -284,14 +284,31 @@ button {
     background-color: #ff6347; /* Tomato color */
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 10px 11px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
     margin-top: 10px;
     display: block;
     text-align: center;
-    width: 100%; /* Optional: full width */
+    width: 100%;
+    
+}
+
+#remove-btn {
+    background-color: #ff6347; /* Tomato color */
+    color: white;
+    border: none;
+    padding: 10px 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    width: 70px;
+    
+    
 }
 
 
@@ -421,10 +438,11 @@ button :hover {
 }
 
 .item-price {
-    font-size: 1.1em;
+    font-size: 1.4em;
     color: #333;
     margin-left: 15px;
     white-space: nowrap;
+    font-weight: bold;
 }
 
 .order-now-btn {
@@ -461,7 +479,7 @@ button :hover {
     top: 0;
     left: 0;
     background: rgb(0,128,0);
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 45%, rgba(0,0,0,0.7) 80%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.7) 92%, rgba(0,0,0,0.0) 94%);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -572,3 +590,15 @@ button :hover {
 }
 
 
+.item-quantity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Adjust spacing between buttons if needed */
+    margin-left: 10px;
+}
+
+.quantity-btn {
+    font-size: 20px; /* Adjust as needed */
+    padding: 5px; /* Adjust size of the button */
+}
