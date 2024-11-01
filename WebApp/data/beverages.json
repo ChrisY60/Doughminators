@@ -1,9 +1,0 @@
-[
-    { "name": "Cola-Coca", "price": 2.00, "description": "Refreshing Coke", "imageURL": "../static/images/cola.png", "milliliters": 500 },
-    { "name": "Sprite", "price": 2.00, "description": "Lemon-lime flavored soft drink", "imageURL": "../static/images/sprite.png", "milliliters": 500 },
-    { "name": "Water", "price": 1.50, "description": "Bottled mineral water", "imageURL": "../static/images/water.png", "milliliters": 500 },
-    { "name": "Iced Tea", "price": 2.50, "description": "Chilled lemon iced tea", "imageURL": "../static/images/iced-tea.png", "milliliters": 500 },
-    { "name": "Orange Juice", "price": 3.00, "description": "Freshly squeezed orange juice", "imageURL": "../static/images/orange-juice.png", "milliliters": 400 },
-    { "name": "Sparkling Water", "price": 2.00, "description": "Bubbly mineral water", "imageURL": "../static/images/sparkling-water.png", "milliliters": 500 },
-    { "name": "Lemonade", "price": 2.50, "description": "Refreshing lemon drink", "imageURL": "../static/images/lemonade.png", "milliliters": 500 }
-]
