@@ -445,7 +445,7 @@ button :hover {
     border-radius: 30px;
     cursor: pointer;
     align-self: flex-start; 
-    width: 60%;
+    width: 50%;
 }
 
 
@@ -635,3 +635,8 @@ button :hover {
     padding: 5px; /* Adjust size of the button */
 }
 
+#totalCost {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+}

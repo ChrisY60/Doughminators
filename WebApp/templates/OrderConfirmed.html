@@ -28,13 +28,15 @@
                         <img src="{{ item.imageURL }}" alt="{{ item.name }} image" class="item-image">
                         <div class="item-details">
                             <h3>{{ item.name }}</h3>
-                            <p>€{{ item.price }}</p>
+                            <p>Quantity: {{ item.quantity or 1 }}</p>
+                            <p>Price per Item: €{{ item.price }}</p>
+
                         </div>
                     </div>
                 {% endfor %}
             </div>
             <div class="total-price">
-                <h3>Total: €{{ total_price }}</h3>
+                <h3>Subtotal: €{{ total_price }}</h3>
             </div>
         </div>
         <a href="/" class="back-to-menu-btn">Back to Menu</a>
