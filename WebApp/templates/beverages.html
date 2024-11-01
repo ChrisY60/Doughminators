@@ -22,7 +22,9 @@
     <main>
         <div class="menu-items">
             <h1 class="bevh">Beverages Menu</h1>
-            <img class="search-icon" src="../static/images/seachi.jpg" alt="Search">
+            <img class="search-iconn" src="../static/images/seachi.jpg" alt="Search" onclick="toggleSearchBar()">
+        
+            <input type="text" id="search-input" placeholder="Search for a pizza..." onkeyup="searchPizza()">
         <ul id="beverageList">
             {% for beverage in beverages %}
                 <li class="menu-item"> 
@@ -34,8 +36,38 @@
                 </li>
             {% endfor %}
         </ul>
+        
     </main>
     <footer id="footredd">
     </footer>
+    <script>
+        function toggleSearchBar() {
+            const searchInput = document.getElementById('search-input');
+
+            
+            if (searchInput.style.display === "none" || searchInput.style.display === "") {
+                searchInput.style.display = "block";
+                searchInput.focus(); 
+            } else {
+                searchInput.style.display = "none";
+                searchInput.value = ""; 
+                searchPizza();
+            }
+        }
+
+        function searchPizza() {
+            const searchInput = document.getElementById('search-input').value.toLowerCase();
+            const pizzaItems = document.querySelectorAll('#pizzaList .menu-item');
+
+            pizzaItems.forEach(item => {
+                const pizzaName = item.querySelector('.pizza-name').textContent.toLowerCase();
+                if (pizzaName.includes(searchInput)) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
