@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/stylesheet.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='modal.css') }}"> <!-- Modal CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='modal.css') }}"> 
     <title>Cart</title>
 </head>
 <body>
@@ -42,11 +42,11 @@
         </div>
         <button class="order-now-btn" onclick="openModal()">Order Now</button>
     </main>
-    <!-- Order Confirmation Modal -->
+
     <div id="orderModal" class="modal">
         <div class="modal-content">
             <p>Once you "confirm" your order, it will be sent to the kitchen.</p>
-            <p>Total Cost: €<span id="totalCost">{{ total_price }}</span></p> <!-- Display total cost here -->
+            <p>Total Cost: €<span id="totalCost">{{ total_price }}</span></p> 
             <p>Are you sure?</p>
             <div class="modal-buttons">
                 <button id="backButton" class="modal-button red">Back</button>
@@ -54,13 +54,13 @@
             </div>
         </div>
     </div>
-    <!-- Scripts -->
+
     <script>
-        // Define makeOrderUrl only once globally
+
         const makeOrderUrl = "{{ url_for('make_order') }}";
     </script>
-    <script src="{{ url_for('static', filename='cart.js') }}"></script> <!-- Main cart JS -->
-    <script src="{{ url_for('static', filename='modal.js') }}"></script> <!-- Modal JS -->
+    <script src="{{ url_for('static', filename='cart.js') }}"></script> 
+    <script src="{{ url_for('static', filename='modal.js') }}"></script> 
     <script id="cartData" type="application/json">
         {{ cart_data | tojson }}
     </script>
