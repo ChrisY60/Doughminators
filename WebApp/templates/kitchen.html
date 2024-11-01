@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head id="kitchenhead">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitchen Orders Status</title>
-    <link rel="stylesheet" href="../static/stylesheet.css">
+    <link rel="stylesheet" href="../static/style.css">
 </head>
-<body id="kitchenbody">
-    <div class="border1"></div>
-    <div class="container1">
-        <div class="column1 waiting-list">
+<body>
+    <div class="border"></div>
+    <div class="container">
+        <div class="column waiting-list">
             <h2>Waiting List</h2>
         </div>
-        <div class="column1 in-process">
+        <div class="column in-process">
             <h2>In Process</h2>
         </div>
-        <div class="column1 ready">
+        <div class="column ready">
             <h2>Ready</h2>
         </div>
     </div>
@@ -23,21 +23,23 @@
     <div class="container2">
         <div class="column2 waiting-list" id="waiting-list-items">
             {% for order in to_do_orders %}
-                <p class="kitchen">Table: {{ order.table }}<br>
+                <p>Table: {{ order.table }}<br>
                    Products: {% for product in order.products %}{{ product.name }}{% if not loop.last %}, {% endif %}{% endfor %}
                 </p>
             {% endfor %}
         </div>
+
         <div class="column2 in-process" id="in-process-items">
             {% for order in cooking_orders %}
-                <p class="kitchen">Table: {{ order.table }}<br>
+                <p>Table: {{ order.table }}<br>
                    Products: {% for product in order.products %}{{ product.name }}{% if not loop.last %}, {% endif %}{% endfor %}
                 </p>
             {% endfor %}
         </div>
+
         <div class="column2 ready" id="ready-items">
             {% for order in ready_to_serve_orders %}
-                <p class="kitchen">Table: {{ order.table }}<br>
+                <p>Table: {{ order.table }}<br>
                    Products: {% for product in order.products %}{{ product.name }}{% if not loop.last %}, {% endif %}{% endfor %}
                 </p>
             {% endfor %}

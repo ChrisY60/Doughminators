@@ -1,7 +1,9 @@
 from flask import Flask, render_template, jsonify, request
 import json
 import os
+import random
 import uuid
+from datetime import datetime
 from Classes.Topping import Topping
 from Classes.Product import Product
 from Classes.Pizza import Pizza
@@ -10,6 +12,7 @@ from Classes.Order import Order
 
 app = Flask(__name__)
 app.secret_key = 'DoughminatorsKey'
+
 
 
 def load_data():
@@ -21,48 +24,46 @@ def load_data():
         beverages_data = json.load(f)
 
     toppings = {topping["name"]: Topping(**topping) for topping in toppings_data}
+
     pizzas = []
     for pizza_data in pizzas_data:
         pizza_toppings = [toppings[name] for name in pizza_data.pop("toppings", [])]
         pizzas.append(Pizza(**pizza_data, toppings=pizza_toppings))
+
     beverages = [Beverage(**beverage) for beverage in beverages_data]
 
     return toppings, pizzas, beverages
 
 
-toppings, pizzas, beverages = load_data()
-
-
-def get_cart_count():
-    if os.path.exists('cart.json'):
-        with open('cart.json') as f:
-            orders = json.load(f)
-            return sum(order.get("quantity", 1) for order in orders)
-    return 0
-
-
-def get_total_price():
-    total_price = 0
-    if os.path.exists('cart.json'):
-        with open('cart.json') as f:
-            orders = json.load(f)
-            for order in orders:
-                price = order.get("price", 0)
-                quantity = order.get("quantity", 1)
-                total_price += price * quantity
-    return total_price
+import os
+import json
 
 
 def update_cart(order_data):
     item_name = order_data.get("name")
     matching_item = next((pizza for pizza in pizzas if pizza.name == item_name), None) or \
                     next((bev for bev in beverages if bev.name == item_name), None)
+
     if matching_item:
-        order_data["id"] = str(uuid.uuid4())
         order_data["imageURL"] = matching_item.imageURL
         order_data["description"] = matching_item.description
         order_data["price"] = matching_item.price
-        order_data["quantity"] = order_data.get("quantity", 1)
+
+        if hasattr(matching_item, 'crust'):
+            order_data["crust"] = matching_item.crust
+        if hasattr(matching_item, 'base'):
+            order_data["base"] = matching_item.base
+        if hasattr(matching_item, 'size'):
+            order_data["size"] = matching_item.size
+        if hasattr(matching_item, 'toppings'):
+            order_data["toppings"] = [{
+                "name": topping.name,
+                "price": topping.price,
+                "description": topping.description
+            } for topping in matching_item.toppings]
+        if hasattr(matching_item, 'milliliters'):
+            order_data["milliliters"] = matching_item.milliliters
+
     if os.path.exists('cart.json'):
         with open('cart.json', 'r+') as f:
             orders = json.load(f)
@@ -74,83 +75,66 @@ def update_cart(order_data):
             json.dump([order_data], f, indent=2)
 
 
+toppings, pizzas, beverages = load_data()
+
+
 @app.route("/")
 def index():
-    cart_count = get_cart_count()
-    return render_template('home.html', cart_count=cart_count)
-
+    return render_template('home.html')
 
 @app.route("/pizza")
 def pizza_page():
-    cart_count = get_cart_count()
-    return render_template('pizza.html', pizzas=[pizza.to_dict() for pizza in pizzas], cart_count=cart_count)
-
+    return render_template('pizza.html', pizzas=[pizza.to_dict() for pizza in pizzas])
 
 @app.route("/beverages")
 def beverages_page():
-    cart_count = get_cart_count()
-    return render_template('beverages.html', beverages=[beverage.to_dict() for beverage in beverages], cart_count=cart_count)
+    return render_template('beverages.html', beverages=[beverage.to_dict() for beverage in beverages])
 
-
-@app.route('/add_to_order', methods=['POST'])
-def add_to_order():
-    data = request.json
-    data["id"] = str(uuid.uuid4())
-    update_cart(data)
-    return jsonify({"status": "success", "message": "Item added to order!"})
-
-
-@app.route("/cart")
-def cart():
-    try:
-        if os.path.exists('cart.json'):
-            with open('cart.json') as f:
-                orders = json.load(f)
-        else:
-            orders = []
-
-        enriched_orders = []
-        total_price = 0
-        cart_data = {}
-
-        for order in orders:
-            item_name = order.get("name")
-            matching_item = next((pizza for pizza in pizzas if pizza.name == item_name), None) or \
-                            next((bev for bev in beverages if bev.name == item_name), None)
-            if matching_item:
-                order["imageURL"] = matching_item.imageURL
-                order["description"] = matching_item.description
-                quantity = order.get("quantity", 1)
-                item_total_price = matching_item.price * quantity
-                total_price += item_total_price
-                cart_data[order["id"]] = {"price": matching_item.price, "quantity": quantity}
-
-            enriched_orders.append(order)
-
-        cart_count = len(enriched_orders)
-        return render_template('cart.html', items=enriched_orders, cart_count=cart_count, total_price=total_price, cart_data=cart_data)
-    except Exception as e:
-        print(f"Error loading orders: {e}")
-        return jsonify({"error": "Could not load orders."}), 500
-
-
-@app.route('/make_order', methods=['GET'])
+@app.route("/makeOrder")
 def make_order():
+    selected_pizza = random.choice(pizzas)
+    selected_beverage = random.choice(beverages)
+    items = [selected_pizza, selected_beverage]
     try:
         with open('cart.json', 'r') as file:
-            items = json.load(file)
+            cart = json.load(file)
     except (FileNotFoundError, json.JSONDecodeError):
         return jsonify({"error": "Cart is empty or file is missing."}), 400
 
-    total_price = sum(item['price'] * item.get('quantity', 1) for item in items)
-    
+    products = []
+    for item in cart:
+        if 'crust' in item and 'base' in item:
+            pizza = Pizza(
+                name=item['name'],
+                price=item['price'],
+                description=item['description'],
+                imageURL=item['imageURL'],
+                crust=item['crust'],
+                base=item['base'],
+                size=item['size'],
+                toppings=[Topping(topping['name'], topping['price'], topping['description']) for topping in
+                          item.get('toppings', [])]
+            )
+            products.append(pizza)
+        elif 'milliliters' in item:
+            beverage = Beverage(
+                name=item['name'],
+                price=item['price'],
+                description=item['description'],
+                imageURL=item['imageURL'],
+                milliliters=item['milliliters']
+            )
+            products.append(beverage)
+    total_price = sum(product.price for product in products)
+    order = Order(4, products, total_price)
+
     try:
         with open('data/currentOrders.json', 'r') as file:
             current_orders = json.load(file)
     except (FileNotFoundError, json.JSONDecodeError):
         current_orders = []
 
-    current_orders.append({"items": items, "total_price": total_price})
+    current_orders.append(order.to_dict())
 
     with open('data/currentOrders.json', 'w') as file:
         json.dump(current_orders, file, indent=4)
@@ -158,8 +142,7 @@ def make_order():
     with open('cart.json', 'w') as file:
         json.dump([], file, indent=4)
 
-    return render_template("OrderConfirmed.html", items=items, total_price=total_price)
-
+    return render_template("OrderConfirmed.html", items=products, total_price=order.totalPrice)
 
 @app.route("/getOrdersForKitchen")
 def get_orders_for_kitchen():
@@ -186,28 +169,39 @@ def get_orders_for_kitchen():
                            cooking_orders=cooking_orders,
                            ready_to_serve_orders=ready_to_serve_orders)
 
-
-@app.route('/update_quantity', methods=['POST'])
-def update_quantity():
+@app.route('/add_to_order', methods=['POST'])
+def add_to_order():
     data = request.json
-    item_id = data.get("id")
-    new_quantity = data.get("quantity")
 
+    data["id"] = str(uuid.uuid4())
+
+    update_cart(data)
+    return jsonify({"status": "success", "message": "Item added to order!"})
+
+@app.route("/cart")
+def cart():
     try:
-        with open('cart.json', 'r+') as f:
-            orders = json.load(f)
-            for order in orders:
-                if order.get("id") == item_id:
-                    order["quantity"] = new_quantity
-                    break
-            f.seek(0)
-            f.truncate()
-            json.dump(orders, f, indent=2)
-        
-        return jsonify({"success": True})
+        if os.path.exists('cart.json'):
+            with open('cart.json') as f:
+                orders = json.load(f)
+        else:
+            orders = []
+
+        enriched_orders = []
+        for order in orders:
+            item_name = order.get("name")
+            matching_item = next((pizza for pizza in pizzas if pizza.name == item_name), None) or \
+                            next((bev for bev in beverages if bev.name == item_name), None)
+            
+            if matching_item:
+                order["imageURL"] = matching_item.imageURL
+                order["description"] = matching_item.description
+            enriched_orders.append(order)
+
+        return render_template('cart.html', items=enriched_orders)
     except Exception as e:
-        print(f"Error updating quantity: {e}")
-        return jsonify({"success": False}), 500
+        print(f"Error loading orders: {e}")
+        return jsonify({"error": "Could not load orders."}), 500
 
 @app.route("/pizzaInformation")
 @app.route("/pizzaInformation/<pizza_name>")
@@ -221,6 +215,7 @@ def pizza_information(pizza_name):
     else:
         return "Pizza not found", 400
 
+
 @app.route('/remove_item', methods=['POST'])
 def remove_item():
     item_id = request.json.get("id")
@@ -228,7 +223,9 @@ def remove_item():
     try:
         with open('cart.json', 'r+') as f:
             orders = json.load(f)
+
             orders = [order for order in orders if order.get("id") != item_id]
+
             f.seek(0)
             f.truncate()
             json.dump(orders, f, indent=2)
@@ -237,7 +234,6 @@ def remove_item():
     except Exception as e:
         print(f"Error removing item: {e}")
         return jsonify({"success": False}), 500
-    
 
 if __name__ == '__main__':
     app.run(port=8080, debug=True)

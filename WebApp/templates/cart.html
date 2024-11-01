@@ -30,14 +30,14 @@
                         <button id="remove-btn" onclick="removeItem('{{ item.id }}')">Remove</button>
                     </div>
                     <div class="item-quantity">
-                        <button class="quantity-btn" onclick="increaseQuantity('{{ item.id }}')">+</button>
-                        <span class="quantity" id="quantity-{{ item.id }}">{{ item.quantity or 1 }}</span>
-                        <button class="quantity-btn" onclick="decreaseQuantity('{{ item.id }}')">-</button>
+                        <button class="quantity-btn vertical-quantity-btn">+</button>
+                        <span class="quantity">{{ item.quantity or 1 }}</span>
+                        <button class="quantity-btn vertical-quantity-btn">-</button>
                     </div>
                     <div class="item-price">
-                        €<span id="price-{{ item.id }}">{{ item.price * (item.quantity or 1) }}</span>
+                        €{{ item.price }}
                     </div>
-                </div>              
+                </div>
             {% endfor %}
         </div>
         <button class="order-now-btn" onclick="openModal()">Order Now</button>
@@ -46,7 +46,6 @@
     <div id="orderModal" class="modal">
         <div class="modal-content">
             <p>Once you "confirm" your order, it will be sent to the kitchen.</p>
-            <p>Total Cost: €<span id="totalCost">{{ total_price }}</span></p> 
             <p>Are you sure?</p>
             <div class="modal-buttons">
                 <button id="backButton" class="modal-button red">Back</button>
@@ -59,12 +58,8 @@
 
         const makeOrderUrl = "{{ url_for('make_order') }}";
     </script>
-    <script src="{{ url_for('static', filename='cart.js') }}"></script> 
-    <script src="{{ url_for('static', filename='modal.js') }}"></script> 
-    <script id="cartData" type="application/json">
-        {{ cart_data | tojson }}
-    </script>
-    
+    <script src="{{ url_for('static', filename='cart.js') }}"></script> <!-- Main cart JS -->
+    <script src="{{ url_for('static', filename='modal.js') }}"></script> <!-- Modal JS -->
     <footer id="footreddd">
     </footer>
 </body>

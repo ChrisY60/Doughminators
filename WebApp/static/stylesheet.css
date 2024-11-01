@@ -8,7 +8,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 11; 
+    z-index: 11;
 
 }
 
@@ -17,7 +17,7 @@ header {
 }
 body {
     margin: 0;
-    padding-top: 127px; 
+    padding-top: 127px;
     font-family: 'IM Fell DW Pica SC', serif;
     background-color: rgb(255, 239, 239);
 }
@@ -27,11 +27,11 @@ main>aside {
     height: 210px;
     border-bottom: 10px solid rgb(255,0, 0);
     background-color: #757575;
-} 
+}
 
 .headerback {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -64,30 +64,30 @@ main>aside {
         left: 20px;
         margin-top: -30px;
     }
-    
+
     .back {
         width: 60px;
         position: absolute;
         left: 10px;
         margin-top: -25px;
     }
-  
 
 
-  
+
+
 }
 
 .Logo {
-    width: 150px; 
+    width: 150px;
 }
 
 .cart {
-    width: 80px;  
+    width: 80px;
     margin-top: -45px;
 }
 
 .cartmenu {
-    width: 80px;  
+    width: 80px;
     margin-top: -45px;
     margin: auto;
 }
@@ -98,22 +98,22 @@ main>aside {
     margin-top: -140px;
     font-weight: bold;
     font-size: 25px;
-    text-align: center;        
+    text-align: center;
 }
 
 .menubox-items {
     display: flex;
-    justify-content: space-between; 
-    gap: 20px; 
+    justify-content: space-between;
+    gap: 20px;
     margin: 120px 0;
 }
 
 
 
 .menu-item1 {
-    flex: 1; 
+    flex: 1;
     text-align: center;
-    position: relative; 
+    position: relative;
 }
 
 .image-container {
@@ -122,9 +122,9 @@ main>aside {
 }
 .image-text {
     position: absolute;
-    top: 65px; 
-    left: 40px; 
-    color: rgb(0, 0, 0); 
+    top: 65px;
+    left: 40px;
+    color: rgb(0, 0, 0);
     font-size: 30px;
     font-weight: bold;
 }
@@ -145,28 +145,28 @@ main>aside {
 
 .image-text1 {
     position: absolute;
-    top: 65px; 
-    left: 40px; 
-    color: rgb(0, 0, 0); 
+    top: 65px;
+    left: 40px;
+    color: rgb(0, 0, 0);
     font-size: 30px;
     font-weight: bold;
 }
 
 .image-text2 {
     position: absolute;
-    top: 65px; 
-    left: 30px; 
-    color: rgb(0, 0, 0); 
+    top: 65px;
+    left: 30px;
+    color: rgb(0, 0, 0);
     font-size: 30px;
     font-weight: bold;
-    z-index: 1; 
+    z-index: 1;
 }
 
 .pizzaimg, .bevimg {
-    width: 95%; 
-    height: auto; 
-    object-fit: cover; 
-    border-radius: 10px; 
+    width: 95%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
     position: relative;
 }
 
@@ -179,8 +179,8 @@ section {
     margin-top: -50px;
     margin-bottom: -38px;
     box-shadow: 0px 0px 7px 1px black
-  
-    
+
+
 }
 
 .review {
@@ -238,7 +238,7 @@ h1 {
     width: 50%;
     margin: 0 auto ;
     margin-top: 20px;
-    
+
 }
 
 .bevh {
@@ -251,16 +251,16 @@ h1 {
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 80px;
-    
+
 }
 .menu-items {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     width: 80%;
     margin: auto;
     border-radius: 20px;
-    
+
 }
 
 
@@ -292,31 +292,31 @@ h1 {
 
 
 .search-icon {
-    width: 24%; 
+    width: 24%;
     margin-top: -88px;
-    margin-left: 285px; 
+    margin-left: 285px;
     background-color: white;
     border-radius: 100px;
 }
 
 .search-iconn {
-    width: 17%; 
+    width: 17%;
     margin-top: -80px;
-    margin-left: 325px; 
+    margin-left: 325px;
     background-color: white;
     border-radius: 100px;
 }
 
 .beverage-image {
-    width: 150px; 
-    height: auto; 
-    border-radius: 8px; 
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
     display: block;
-    margin: 0 auto 10px auto; 
+    margin: 0 auto 10px auto;
 }
 
 button {
-    background-color: #ff6347; 
+    background-color: #ff6347;
     color: white;
     border: none;
     padding: 10px 11px;
@@ -327,11 +327,11 @@ button {
     display: block;
     text-align: center;
     width: 100%;
-    
+
 }
 
 #remove-btn {
-    background-color: #ff6347; 
+    background-color: #ff6347;
     color: white;
     border: none;
     padding: 10px 0px;
@@ -342,8 +342,8 @@ button {
     display: block;
     text-align: center;
     width: 70px;
-    
-    
+
+
 }
 
 
@@ -352,19 +352,19 @@ button :hover {
 }
 
 #pizzaList {
-    list-style-type: none; 
+    list-style-type: none;
 }
 
 #beverageList {
-    list-style-type: none; 
+    list-style-type: none;
 }
 
 .pizza-image {
-    width: 100%;            
-    max-width: 200px;      
-    max-height: 200px;      
-    object-fit: cover;      
-    border-radius: 10px;    
+    width: 100%;
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 
@@ -434,12 +434,12 @@ button :hover {
     flex: 1;
     margin-left: 15px;
     display: flex;
-    flex-direction: column; 
-    align-items: flex-start; 
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .modify-btn {
-    margin-top: 5px; 
+    margin-top: 5px;
     padding: 4px 4px;
     font-size: 0.9em;
     background-color: #333;
@@ -447,7 +447,7 @@ button :hover {
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    align-self: flex-start; 
+    align-self: flex-start;
     width: 50%;
 }
 
@@ -501,7 +501,7 @@ button :hover {
     width: 20%;
     background-color: rgb(255, 255, 255);
     border-radius: 100px;
-    box-shadow: 1px 2px 2px  
+    box-shadow: 1px 2px 2px
 
 }
 
@@ -518,7 +518,7 @@ button :hover {
     transition: 0.5s;
     padding-top: 60px;
   }
-  
+
   .sidenav a, label {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -528,13 +528,13 @@ button :hover {
     transition: 0.3s;
   }
   .sidenav select {
-    background-color: #f4f4f4; 
-    color: #333; 
-    padding: 12px 20px; 
-    font-size: 1.2em; 
-    border: none; 
-    border-radius: 8px; 
-    cursor: pointer; 
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
     padding: 8px 8px 8px 32px;
   }
   .sidenav .closebtn {
@@ -544,7 +544,7 @@ button :hover {
     font-size: 36px;
     margin-left: 50px;
   }
-  
+
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
@@ -555,7 +555,7 @@ button :hover {
     padding: 20px;
     bottom: 0;
     width: 90%;
-    z-index: 10; 
+    z-index: 10;
     text-align: center;
     color: rgb(255, 0, 0);
 }
@@ -564,7 +564,7 @@ button :hover {
     position:fixed;
     bottom: 0;
     width: 90%;
-    background-color: #FF6347; 
+    background-color: #FF6347;
     padding: 20px;
     text-align: center;
     color: white;
@@ -573,14 +573,14 @@ button :hover {
 
 /* Modal styles */
 .modal {
-    display: none; 
+    display: none;
     position: fixed;
-    z-index: 1000; 
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); 
+    background-color: rgba(0, 0, 0, 0.4);
 }
 .modal-content {
     background-color: #fff;
@@ -610,12 +610,12 @@ button :hover {
 }
 
 .modal-button.red {
-    background-color: #ff6347; 
+    background-color: #ff6347;
     color: white;
 }
 
 .modal-button.green {
-    background-color: #32CD32; 
+    background-color: #32CD32;
     color: white;
 }
 
@@ -628,13 +628,13 @@ button :hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px; 
+    gap: 5px;
     margin-left: 10px;
 }
 
 .quantity-btn {
-    font-size: 20px; 
-    padding: 5px; 
+    font-size: 20px;
+    padding: 5px;
 }
 
 #totalCost {
@@ -687,23 +687,23 @@ button :hover {
 .column2 {
     flex: 1;
     display: flex;
-    flex-direction: column; 
-    align-items: flex-start; 
-    justify-content: flex-start; 
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
     padding: 20px;
     color: #333; /* Ensure text color is visible */
     font-size: 1.5em;
-    text-align: left; 
+    text-align: left;
 }
 
 p.kitchen {
-    margin-top: 20px; 
-    cursor: pointer; 
-    transition: background-color 0.3s; 
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 p.kitchen:hover {
-    background-color: rgba(255, 255, 255, 0.2); 
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Background colors for each column */
@@ -718,13 +718,13 @@ p.kitchen:hover {
 
 .ready {
     background-color: #b3ffcc;
-    color: #333; 
+    color: #333;
 }
 
 /* Column titles styling */
 .column1 h2 {
     font-size: 1.8em;
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
 }
 #kitchenbody {
     height: 100%;
@@ -744,7 +744,7 @@ p.kitchen:hover {
 
 .order-confirmation #itemList {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     max-width: 800px;
     margin: 0 auto;
@@ -764,9 +764,9 @@ p.kitchen:hover {
 }
 
 .ordername {
-    font-size: 2em; 
-    font-weight: normal; 
-    color: #333; 
+    font-size: 2em;
+    font-weight: normal;
+    color: #333;
     text-align: center;
 }
 
@@ -790,5 +790,5 @@ p.kitchen:hover {
     margin-left: 120px;
     text-decoration: none;
     font-size: 20px;
-    
+
 }
