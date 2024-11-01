@@ -31,13 +31,15 @@
             <ul id="pizzaList">
                 {% for pizza in pizzas %}
                     <li class="menu-item">
+                        {% if pizza_quantities[pizza.name]%}
+                            <div class="quantity-indicator">{{ pizza_quantities[pizza.name] }}</div>
+                        {% endif %}
                         <a class="info-link" href="/pizzaInformation/{{ pizza.name }}"></a>
                         <img class="pizza-image" src="{{ pizza.imageURL }}" alt="Image of {{ pizza.name }}">
                         <h2 class="pizza-name">{{ pizza.name }}</h2>
                         <p>{{ pizza.description }}</p>
                         <p>Price: €{{ pizza.price }}</p>
-                        <button onclick="addToOrder('{{ pizza.name }}', '{{ pizza.price }}')">Add to Order</button>
-                    </li>
+                        <button onclick="addToOrder('{{ pizza.name }}', '{{ pizza.price }}')">Add to Order</button>  </li>
                 {% endfor %}
             </ul>
         </div>
@@ -49,13 +51,13 @@
         function toggleSearchBar() {
             const searchInput = document.getElementById('search-input');
 
-            
+
             if (searchInput.style.display === "none" || searchInput.style.display === "") {
                 searchInput.style.display = "block";
-                searchInput.focus(); 
+                searchInput.focus();
             } else {
                 searchInput.style.display = "none";
-                searchInput.value = ""; 
+                searchInput.value = "";
                 searchPizza();
             }
         }
@@ -75,4 +77,14 @@
         }
     </script>
 </body>
+<script>
+    window.addEventListener('load', () => {
+        const scrollPosition = localStorage.getItem('scrollPosition');
+        if (scrollPosition) {
+            window.scrollTo(0, parseInt(scrollPosition, 10));
+            localStorage.removeItem('scrollPosition');
+        }
+    });
+</script>
+
 </html>
