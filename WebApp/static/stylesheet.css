@@ -837,29 +837,4 @@ main {
     font-size: 19px;
     padding: 10px;
     text-align: center;
-    background: white;
-    margin-left: 50px;
-    margin-right: 50px;
-    border-radius: 10px;
 }
-
-.infostyle {
-    background: white;
-    padding-bottom: 176px;
-    padding-top: 3px;
-    border-radius: 50px 50px 0 0; /* Curves only the top-left and top-right corners */
-    box-shadow: 0px 0px 9px;
-}
-
-.info-list-toppings {
-    list-style-type: none; 
-    padding: 0;
-    text-align: center; 
-    margin: 0 auto;
-}
-
-.info-list-toppings li {
-    font-size: 1.2em; 
-    margin-bottom: 5px; 
-}
-
