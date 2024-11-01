@@ -15,13 +15,13 @@
             </a>
         </div>
     </header>
-    <main>
+    <main class="order-confirmation">
         <div class="confirmation-message">
             <h1>Your Order Has Been Confirmed!</h1>
             <p>Thank you for your order. Your delicious pizzas and beverages are on the way!</p>
         </div>
         <div class="order-details">
-            <h2>Order Details:</h2>
+            <h2 class="ordername">Order Details:</h2>
             <div id="itemList">
                 {% for item in items %}
                     <div class="order-item" data-item-id="{{ item.id }}">
@@ -30,7 +30,6 @@
                             <h3>{{ item.name }}</h3>
                             <p>Quantity: {{ item.quantity or 1 }}</p>
                             <p>Price per Item: €{{ item.price }}</p>
-
                         </div>
                     </div>
                 {% endfor %}
@@ -39,7 +38,7 @@
                 <h3>Subtotal: €{{ total_price }}</h3>
             </div>
         </div>
-        <a href="/" class="back-to-menu-btn">Back to Menu</a>
+        <a class="menuback" href="/" class="back-to-menu-btn">Back to Menu</a>
     </main>
 </body>
 </html>
