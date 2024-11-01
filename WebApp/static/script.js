@@ -13,10 +13,11 @@ function addToOrder(name, price) {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data.message); // Handle success message
-        alert(data.message); // Notify user of success
+        console.log(data.message);
+        location.reload();
     })
     .catch((error) => {
         console.error('Error:', error);
     });
 }
+

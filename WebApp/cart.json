@@ -1,1 +1,147 @@
-[]
+[
+  {
+    "name": "Margherita",
+    "price": 8.0,
+    "id": "0dbf31d8-0447-4260-9a8b-ad7992a4f401",
+    "imageURL": "/static/images/margherita.jpg",
+    "description": "Classic cheese and tomato pizza",
+    "crust": "thin",
+    "base": "tomato",
+    "size": "medium",
+    "toppings": [
+      {
+        "name": "Extra Cheese",
+        "price": 1.0,
+        "description": "Mozzarella cheese"
+      }
+    ]
+  },
+  {
+    "name": "BBQ Chicken",
+    "price": 11.0,
+    "id": "f1cc68d4-fe78-45d3-8639-679c7177ffa0",
+    "imageURL": "/static/images/bbq_chicken.jpg",
+    "description": "Tangy BBQ sauce with grilled chicken",
+    "crust": "stuffed",
+    "base": "bbq",
+    "size": "large",
+    "toppings": [
+      {
+        "name": "Chicken",
+        "price": 1.5,
+        "description": "Grilled chicken pieces"
+      },
+      {
+        "name": "Onions",
+        "price": 0.5,
+        "description": "Thinly sliced red onions"
+      },
+      {
+        "name": "Bacon",
+        "price": 1.75,
+        "description": "Crispy bacon pieces"
+      },
+      {
+        "name": "Extra Cheese",
+        "price": 1.0,
+        "description": "Mozzarella cheese"
+      }
+    ]
+  },
+  {
+    "name": "BBQ Chicken",
+    "price": 11.0,
+    "id": "059bc02f-1f93-4fac-8966-f97fd141199e",
+    "imageURL": "/static/images/bbq_chicken.jpg",
+    "description": "Tangy BBQ sauce with grilled chicken",
+    "crust": "stuffed",
+    "base": "bbq",
+    "size": "large",
+    "toppings": [
+      {
+        "name": "Chicken",
+        "price": 1.5,
+        "description": "Grilled chicken pieces"
+      },
+      {
+        "name": "Onions",
+        "price": 0.5,
+        "description": "Thinly sliced red onions"
+      },
+      {
+        "name": "Bacon",
+        "price": 1.75,
+        "description": "Crispy bacon pieces"
+      },
+      {
+        "name": "Extra Cheese",
+        "price": 1.0,
+        "description": "Mozzarella cheese"
+      }
+    ]
+  },
+  {
+    "name": "Spicy Meat Lover",
+    "price": 12.0,
+    "id": "5b6975fa-5daa-4857-87ed-decc499e00c8",
+    "imageURL": "/static/images/spicy_meat_lover.jpg",
+    "description": "Pepperoni, sausage, bacon, and jalapenos",
+    "crust": "thick",
+    "base": "tomato",
+    "size": "large",
+    "toppings": [
+      {
+        "name": "Pepperoni",
+        "price": 1.5,
+        "description": "Spicy pepperoni slices"
+      },
+      {
+        "name": "Sausage",
+        "price": 1.25,
+        "description": "Italian sausage slices"
+      },
+      {
+        "name": "Bacon",
+        "price": 1.75,
+        "description": "Crispy bacon pieces"
+      },
+      {
+        "name": "Jalapenos",
+        "price": 0.6,
+        "description": "Spicy jalapeno peppers"
+      }
+    ]
+  },
+  {
+    "name": "Spicy Meat Lover",
+    "price": 12.0,
+    "id": "5d973adb-8ba9-401b-8955-a7250b516876",
+    "imageURL": "/static/images/spicy_meat_lover.jpg",
+    "description": "Pepperoni, sausage, bacon, and jalapenos",
+    "crust": "thick",
+    "base": "tomato",
+    "size": "large",
+    "toppings": [
+      {
+        "name": "Pepperoni",
+        "price": 1.5,
+        "description": "Spicy pepperoni slices"
+      },
+      {
+        "name": "Sausage",
+        "price": 1.25,
+        "description": "Italian sausage slices"
+      },
+      {
+        "name": "Bacon",
+        "price": 1.75,
+        "description": "Crispy bacon pieces"
+      },
+      {
+        "name": "Jalapenos",
+        "price": 0.6,
+        "description": "Spicy jalapeno peppers"
+      }
+    ]
+  }
+]

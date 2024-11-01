@@ -593,5 +593,13 @@
         ],
         "totalPrice": 16.0,
         "status": "TO DO"
+    },
+    {
+        "id": "e6cb1e42-2049-4c5b-aea9-5eb6cf91a70d",
+        "table": 4,
+        "datetime": "2024-11-01 14:57:58.196468",
+        "products": [],
+        "totalPrice": 0,
+        "status": "TO DO"
     }
 ]
