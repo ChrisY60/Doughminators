@@ -837,7 +837,7 @@ main {
     font-size: 19px;
     padding: 10px;
     text-align: center;
-<<<<<<< HEAD
+
     background: white;
     margin-left: 50px;
     margin-right: 50px;
@@ -900,4 +900,5 @@ main {
 .search-iconn:hover {
     transform: scale(1.1);
 }
->>>>>>> 10fd0f2c06a5c3b58423d42f089932a70b0fff58
+
+
