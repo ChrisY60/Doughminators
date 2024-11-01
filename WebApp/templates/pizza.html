@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="headerback">
-            <a href = "/" ><img class="Logo" src="../static/images/Logo.png" alt="Logo"></a>
+            <a href="/" ><img class="Logo" src="../static/images/Logo.png" alt="Logo"></a>
             <a href="/cart" class="cart-item">
                 <img class="cart" src="../static/images/cartn.png" alt="cart_symbol">
             </a>
@@ -22,7 +22,10 @@
     <main>
         <div class="menu-header">
             <h1>Pizza Menu</h1>
-            <img class="search-iconn" src="../static/images/seachi.jpg" alt="Search">
+   
+            <img class="search-iconn" src="../static/images/seachi.jpg" alt="Search" onclick="toggleSearchBar()">
+        
+            <input type="text" id="search-input" placeholder="Search for a pizza..." onkeyup="searchPizza()" style="display: none;">
         </div>
         <div class="menu-items">
             <ul id="pizzaList">
@@ -30,7 +33,7 @@
                     <li class="menu-item">
                         <a class="info-link" href="/pizzaInformation/{{ pizza.name }}"></a>
                         <img class="pizza-image" src="{{ pizza.imageURL }}" alt="Image of {{ pizza.name }}">
-                        <h2>{{ pizza.name }}</h2>
+                        <h2 class="pizza-name">{{ pizza.name }}</h2>
                         <p>{{ pizza.description }}</p>
                         <p>Price: €{{ pizza.price }}</p>
                         <button onclick="addToOrder('{{ pizza.name }}', '{{ pizza.price }}')">Add to Order</button>
@@ -41,5 +44,35 @@
     </main>
     <footer id="footredd">
     </footer>
+
+    <script>
+        function toggleSearchBar() {
+            const searchInput = document.getElementById('search-input');
+
+            
+            if (searchInput.style.display === "none" || searchInput.style.display === "") {
+                searchInput.style.display = "block";
+                searchInput.focus(); 
+            } else {
+                searchInput.style.display = "none";
+                searchInput.value = ""; 
+                searchPizza();
+            }
+        }
+
+        function searchPizza() {
+            const searchInput = document.getElementById('search-input').value.toLowerCase();
+            const pizzaItems = document.querySelectorAll('#pizzaList .menu-item');
+
+            pizzaItems.forEach(item => {
+                const pizzaName = item.querySelector('.pizza-name').textContent.toLowerCase();
+                if (pizzaName.includes(searchInput)) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
