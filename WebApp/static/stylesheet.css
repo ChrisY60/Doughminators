@@ -837,4 +837,67 @@ main {
     font-size: 19px;
     padding: 10px;
     text-align: center;
+<<<<<<< HEAD
+    background: white;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 10px;
 }
+
+.infostyle {
+    background: white;
+    padding-bottom: 176px;
+    padding-top: 3px;
+    border-radius: 50px 50px 0 0; /* Curves only the top-left and top-right corners */
+    box-shadow: 0px 0px 9px;
+}
+
+.info-list-toppings {
+    list-style-type: none; 
+    padding: 0;
+    text-align: center; 
+    margin: 0 auto;
+}
+
+.info-list-toppings li {
+    font-size: 1.2em; 
+    margin-bottom: 5px; 
+}
+
+=======
+}
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#search-input {
+    display: none;
+    width: 50%;
+    padding: 15px;
+    font-size: 1.2em;
+    border: 2px solid #ccc;
+    border-radius: 25px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    outline: none;
+    transition: all 0.3s ease-in-out; 
+}
+
+#search-input:focus {
+    box-shadow: 0px 4px 12px rgba(255, 127, 80, 0.4);
+}
+
+.search-iconn {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.search-iconn:hover {
+    transform: scale(1.1);
+}
+>>>>>>> 10fd0f2c06a5c3b58423d42f089932a70b0fff58
