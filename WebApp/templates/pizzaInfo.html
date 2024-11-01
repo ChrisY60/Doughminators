@@ -22,13 +22,14 @@
     <h1>{{ pizza.name }}</h1>
     <div class="info-centered">
         <img class="pizza-info-image" src="{{ pizza.imageURL }}">
-        <h2>Base : {{ pizza.base }}</h2>
+        <div class="infostyle"> <h2>Base : {{ pizza.base }}</h2>
         <h2>Crust : {{ pizza.crust }}</h2>
         <h2>Ingredients : </h2>
-        <ul>
+        <ul class="info-list-toppings">
             {% for topping in pizza.toppings %}
-                <li class="info-list-toppings">{{ topping.name }}</li>
+                <li>{{ topping.name }}</li>
             {% endfor %}
+        </div>
         </ul>
     </div>
 
