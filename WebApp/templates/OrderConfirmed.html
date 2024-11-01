@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/stylesheet.css">
     <title>Order Confirmed</title>
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script> 
 </head>
 <body>
     <header>
@@ -17,8 +18,16 @@
     </header>
     <main class="order-confirmation">
         <div class="confirmation-message">
-            <h1>Your Order Has Been Confirmed!</h1>
-            <p>Thank you for your order. Your delicious pizzas and beverages are on the way!</p>
+            <h1 class="orderconfmsg">Your Order Has Been Confirmed!
+                <dotlottie-player 
+                src="https://lottie.host/6466bec1-db4f-4c9b-aae0-98352aa27c99/JGAzwsj7Vc.json" 
+                background="transparent" 
+                speed="1" 
+                style="width: 100px; height: 100px; margin: auto;"  
+                autoplay>
+            </dotlottie-player>
+            </h1>
+            <p class="thankyou">Thank you for your order. Your delicious pizzas and beverages are on the way!</p>
         </div>
         <div class="order-details">
             <h2 class="ordername">Order Details:</h2>
@@ -40,5 +49,8 @@
         </div>
         <a class="menuback" href="/" class="back-to-menu-btn">Back to Menu</a>
     </main>
+    <footer>
+        <div class="footcon"></div>
+    </footer>
 </body>
 </html>
