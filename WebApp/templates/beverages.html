@@ -20,22 +20,25 @@
         </div>
     </header>
     <main>
-        <div class="menu-items">
-            <h1 class="bevh">Beverages Menu</h1>
-            <img class="search-icon" src="../static/images/seachi.jpg" alt="Search" onclick="toggleSearchBar()">
+        <div class="menu-header">
+            <h1>Beverages Menu</h1>
+            <img class="search-iconn" src="../static/images/seachi.jpg" alt="Search" onclick="toggleSearchBar()">
             <input type="text" id="beverage-search-input" placeholder="Search for a beverage..." onkeyup="searchBeverage()" style="display: none;">
-            <ul id="beverageList">
-                {% for beverage in beverages %}
-                    <li class="menu-item">
-                        <img src="{{ beverage.imageURL }}" alt="{{ beverage.name }}" class="beverage-image">
-                        <h2>{{ beverage.name }}</h2>
-                        <p>{{ beverage.description }}</p>
-                        <p>Price: €{{ beverage.price }}</p>
-                        <button onclick="addToOrder('{{ beverage.name }}', '{{ beverage.price }}')">Add to Order</button>
-                    </li>
-                {% endfor %}
-            </ul>
         </div>
+        <ul id="beverageList">
+            {% for beverage in beverages %}
+                <li class="menu-item">
+                    {% if beverages_quantity[beverage.name]%}
+                        <div class="quantity-indicator">{{ beverages_quantity[beverage.name] }}</div>
+                    {% endif %}
+                    <img class="beverage-image" src="{{ beverage.imageURL }}" alt="Image of {{ beverage.name }}">
+                    <h2 class="pizza-name">{{ beverage.name }}</h2>
+                    <p>{{ beverage.description }}</p>
+                    <p>Price: €{{ beverage.price }}</p>
+                    <button onclick="addToOrder('{{ beverage.name }}', '{{ beverage.price }}')">Add to Order</button>
+                </li>
+            {% endfor %}
+        </ul>
     </main>
     <footer id="footredd">
     </footer>

@@ -112,7 +112,23 @@ def pizza_page():
 
 @app.route("/beverages")
 def beverages_page():
-    return render_template('beverages.html', beverages=[beverage.to_dict() for beverage in beverages])
+    try:
+        with open('cart.json', 'r') as file:
+            cart = json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        cart = []
+
+    beverages_quantity = {}
+    for item in cart:
+        if 'name' in item:
+            beverage_name = item['name']
+            if beverage_name in beverages_quantity:
+                beverages_quantity[beverage_name] += 1
+            else:
+                beverages_quantity[beverage_name] = 1
+
+    return render_template('beverages.html', beverages=[beverage.to_dict() for beverage in beverages],
+                            beverages_quantity=beverages_quantity)
 
 
 @app.route("/makeOrder", methods=['GET','POST'])

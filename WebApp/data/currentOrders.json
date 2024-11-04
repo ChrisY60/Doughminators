@@ -252,17 +252,9 @@
         "status": "TO DO"
     },
     {
-        "id": "4202582c-607b-4c60-8c4a-0944e0ff6ea9",
+        "id": "955ab1f7-c155-435b-8909-ca6dd3f8adbd",
         "table": 4,
-        "datetime": "2024-10-31 15:17:49.325483",
-        "products": [],
-        "totalPrice": 40,
-        "status": "TO DO"
-    },
-    {
-        "id": "fcfccebc-4b8a-42a3-8e9c-468b176eaa2b",
-        "table": 4,
-        "datetime": "2024-10-31 15:20:23.338787",
+        "datetime": "2024-11-01 15:14:11.822688",
         "products": [
             {
                 "name": "Margherita",
@@ -281,19 +273,14 @@
                 ]
             },
             {
-                "name": "Pepperoni Feast",
-                "price": 10.0,
-                "description": "Loaded with pepperoni and cheese",
-                "imageURL": "/static/images/pepperoni_feast.jpg",
-                "crust": "thick",
+                "name": "Margherita",
+                "price": 8.0,
+                "description": "Classic cheese and tomato pizza",
+                "imageURL": "/static/images/margherita.jpg",
+                "crust": "thin",
                 "base": "tomato",
-                "size": "large",
+                "size": "medium",
                 "toppings": [
-                    {
-                        "name": "Pepperoni",
-                        "price": 1.5,
-                        "description": "Spicy pepperoni slices"
-                    },
                     {
                         "name": "Extra Cheese",
                         "price": 1.0,
@@ -302,23 +289,49 @@
                 ]
             },
             {
-                "name": "Veggie Delight",
-                "price": 9.0,
-                "description": "Loaded with fresh veggies",
-                "imageURL": "/static/images/veggie_delight.jpg",
-                "crust": "thin",
-                "base": "tomato",
+                "name": "Cola-Coca",
+                "price": 2.0,
+                "description": "Refreshing Coke",
+                "imageURL": "../static/images/cola.png",
+                "milliliters": 500
+            },
+            {
+                "name": "Water",
+                "price": 1.5,
+                "description": "Bottled mineral water",
+                "imageURL": "../static/images/water.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 19.5,
+        "status": "TO DO"
+    },
+    {
+        "id": "2765fe0e-f0a7-4530-8f96-5ade7a934298",
+        "table": 4,
+        "datetime": "2024-11-01 15:14:21.078084",
+        "products": [],
+        "totalPrice": 0,
+        "status": "TO DO"
+    },
+    {
+        "id": "7375693e-7520-4c2c-9807-3b79a0a530a9",
+        "table": "1",
+        "datetime": "2024-11-04 12:14:30.327135",
+        "products": [
+            {
+                "name": "BBQ Chicken",
+                "price": 11.0,
+                "description": "Tangy BBQ sauce with grilled chicken",
+                "imageURL": "/static/images/bbq_chicken.jpg",
+                "crust": "stuffed",
+                "base": "bbq",
                 "size": "large",
                 "toppings": [
                     {
-                        "name": "Olives",
-                        "price": 0.75,
-                        "description": "Green olives"
-                    },
-                    {
-                        "name": "Bell Peppers",
-                        "price": 0.7,
-                        "description": "Colorful bell peppers"
+                        "name": "Chicken",
+                        "price": 1.5,
+                        "description": "Grilled chicken pieces"
                     },
                     {
                         "name": "Onions",
@@ -326,88 +339,9 @@
                         "description": "Thinly sliced red onions"
                     },
                     {
-                        "name": "Mushrooms",
-                        "price": 0.8,
-                        "description": "Fresh mushrooms"
-                    },
-                    {
-                        "name": "Spinach",
-                        "price": 0.65,
-                        "description": "Fresh spinach leaves"
-                    }
-                ]
-            }
-        ],
-        "totalPrice": 40,
-        "status": "TO DO"
-    },
-    {
-        "id": "41420717-59d1-4f28-aa05-76b4fd7970c6",
-        "table": 4,
-        "datetime": "2024-10-31 15:50:08.269123",
-        "products": [],
-        "totalPrice": 40,
-        "status": "TO DO"
-    },
-    {
-        "id": "8766f994-eebf-4678-9606-f396f055c264",
-        "table": 4,
-        "datetime": "2024-10-31 15:50:20.008427",
-        "products": [
-            {
-                "name": "Margherita",
-                "price": 8.0,
-                "description": "Classic cheese and tomato pizza",
-                "imageURL": "/static/images/margherita.jpg",
-                "crust": "thin",
-                "base": "tomato",
-                "size": "medium",
-                "toppings": [
-                    {
-                        "name": "Extra Cheese",
-                        "price": 1.0,
-                        "description": "Mozzarella cheese"
-                    }
-                ]
-            }
-        ],
-        "totalPrice": 40,
-        "status": "TO DO"
-    },
-    {
-        "id": "d6efb569-6499-4d3e-91ad-438765bd39a3",
-        "table": 4,
-        "datetime": "2024-10-31 15:51:26.866257",
-        "products": [
-            {
-                "name": "Margherita",
-                "price": 8.0,
-                "description": "Classic cheese and tomato pizza",
-                "imageURL": "/static/images/margherita.jpg",
-                "crust": "thin",
-                "base": "tomato",
-                "size": "medium",
-                "toppings": [
-                    {
-                        "name": "Extra Cheese",
-                        "price": 1.0,
-                        "description": "Mozzarella cheese"
-                    }
-                ]
-            },
-            {
-                "name": "Pepperoni Feast",
-                "price": 10.0,
-                "description": "Loaded with pepperoni and cheese",
-                "imageURL": "/static/images/pepperoni_feast.jpg",
-                "crust": "thick",
-                "base": "tomato",
-                "size": "large",
-                "toppings": [
-                    {
-                        "name": "Pepperoni",
-                        "price": 1.5,
-                        "description": "Spicy pepperoni slices"
+                        "name": "Bacon",
+                        "price": 1.75,
+                        "description": "Crispy bacon pieces"
                     },
                     {
                         "name": "Extra Cheese",
@@ -417,39 +351,20 @@
                 ]
             },
             {
-                "name": "Hawaiian",
-                "price": 9.5,
-                "description": "A tropical mix of ham and pineapple",
-                "imageURL": "/static/images/hawaiian.jpg",
-                "crust": "thin",
-                "base": "tomato",
-                "size": "medium",
-                "toppings": [
-                    {
-                        "name": "Pineapple",
-                        "price": 1.0,
-                        "description": "Sweet pineapple chunks"
-                    },
-                    {
-                        "name": "Ham",
-                        "price": 1.25,
-                        "description": "Sliced ham"
-                    },
-                    {
-                        "name": "Extra Cheese",
-                        "price": 1.0,
-                        "description": "Mozzarella cheese"
-                    }
-                ]
+                "name": "Cola-Coca",
+                "price": 2.0,
+                "description": "Refreshing Coke",
+                "imageURL": "../static/images/cola.png",
+                "milliliters": 500
             }
         ],
-        "totalPrice": 40,
+        "totalPrice": 13.0,
         "status": "TO DO"
     },
     {
-        "id": "bd68255e-37dc-4b52-a39d-b2aa03fa401c",
-        "table": 4,
-        "datetime": "2024-11-01 12:15:06.380415",
+        "id": "ee7e15fc-2b7e-433d-82d1-0766a77e4fe2",
+        "table": "1",
+        "datetime": "2024-11-04 12:16:31.889192",
         "products": [
             {
                 "name": "Margherita",
@@ -468,138 +383,14 @@
                 ]
             },
             {
-                "name": "Margherita",
-                "price": 8.0,
-                "description": "Classic cheese and tomato pizza",
-                "imageURL": "/static/images/margherita.jpg",
-                "crust": "thin",
-                "base": "tomato",
-                "size": "medium",
-                "toppings": [
-                    {
-                        "name": "Extra Cheese",
-                        "price": 1.0,
-                        "description": "Mozzarella cheese"
-                    }
-                ]
+                "name": "Sprite",
+                "price": 2.0,
+                "description": "Lemon-lime flavored soft drink",
+                "imageURL": "../static/images/sprite.png",
+                "milliliters": 500
             }
         ],
-        "totalPrice": 40,
-        "status": "TO DO"
-    },
-    {
-        "id": "4ccb2446-ab6e-452c-8dd9-38e363b1c55e",
-        "table": 4,
-        "datetime": "2024-11-01 12:17:28.676687",
-        "products": [
-            {
-                "name": "Margherita",
-                "price": 8.0,
-                "description": "Classic cheese and tomato pizza",
-                "imageURL": "/static/images/margherita.jpg",
-                "crust": "thin",
-                "base": "tomato",
-                "size": "medium",
-                "toppings": [
-                    {
-                        "name": "Extra Cheese",
-                        "price": 1.0,
-                        "description": "Mozzarella cheese"
-                    }
-                ]
-            },
-            {
-                "name": "Margherita",
-                "price": 8.0,
-                "description": "Classic cheese and tomato pizza",
-                "imageURL": "/static/images/margherita.jpg",
-                "crust": "thin",
-                "base": "tomato",
-                "size": "medium",
-                "toppings": [
-                    {
-                        "name": "Extra Cheese",
-                        "price": 1.0,
-                        "description": "Mozzarella cheese"
-                    }
-                ]
-            }
-        ],
-        "totalPrice": 40,
-        "status": "TO DO"
-    },
-    {
-        "id": "2c746470-f121-4d3e-b92a-8623924881d8",
-        "table": 4,
-        "datetime": "2024-11-01 12:17:45.534022",
-        "products": [
-            {
-                "name": "Margherita",
-                "price": 8.0,
-                "description": "Classic cheese and tomato pizza",
-                "imageURL": "/static/images/margherita.jpg",
-                "crust": "thin",
-                "base": "tomato",
-                "size": "medium",
-                "toppings": [
-                    {
-                        "name": "Extra Cheese",
-                        "price": 1.0,
-                        "description": "Mozzarella cheese"
-                    }
-                ]
-            }
-        ],
-        "totalPrice": 40,
-        "status": "TO DO"
-    },
-    {
-        "id": "0aa53570-196b-405c-a3de-913671e41e01",
-        "table": 4,
-        "datetime": "2024-11-01 12:21:19.078449",
-        "products": [
-            {
-                "name": "Margherita",
-                "price": 8.0,
-                "description": "Classic cheese and tomato pizza",
-                "imageURL": "/static/images/margherita.jpg",
-                "crust": "thin",
-                "base": "tomato",
-                "size": "medium",
-                "toppings": [
-                    {
-                        "name": "Extra Cheese",
-                        "price": 1.0,
-                        "description": "Mozzarella cheese"
-                    }
-                ]
-            },
-            {
-                "name": "Margherita",
-                "price": 8.0,
-                "description": "Classic cheese and tomato pizza",
-                "imageURL": "/static/images/margherita.jpg",
-                "crust": "thin",
-                "base": "tomato",
-                "size": "medium",
-                "toppings": [
-                    {
-                        "name": "Extra Cheese",
-                        "price": 1.0,
-                        "description": "Mozzarella cheese"
-                    }
-                ]
-            }
-        ],
-        "totalPrice": 16.0,
-        "status": "TO DO"
-    },
-    {
-        "id": "e6cb1e42-2049-4c5b-aea9-5eb6cf91a70d",
-        "table": 4,
-        "datetime": "2024-11-01 14:57:58.196468",
-        "products": [],
-        "totalPrice": 0,
+        "totalPrice": 10.0,
         "status": "TO DO"
     }
 ]
