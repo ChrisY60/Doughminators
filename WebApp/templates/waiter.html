@@ -2,23 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="1">
     <title>Waiter</title>
     <link rel="stylesheet" href="../static/stylesheet.css">
-    <meta http-equiv="refresh" content="1">
 </head>
 <body>
-    <h1>Orders to Serve</h1>
-    {% for order in ready_to_serve_orders %}
-        <h2>Table: {{ order.table }}</h2>
-        {% for product in order.products %}
-            <h3>{{ product.name }}</h3>
+    <div class="container">
+        <header>
+            <div class="headerback">
+                <a href="/" ><img class="Logo" src="../static/images/Logo.png" alt="Logo"></a>
+            </div>
+        </header>
+        <h1 class="h1waiter">Orders to Serve</h1>
+
+        {% for order in ready_to_serve_orders %}
+        <div class="order-card">
+            <div class="waiterinfo">
+                <h2>Table: {{ order.table }}</h2>
+                {% for product in order.products %}
+                    <h3>{{ product.name }}</h3>
+                {% endfor %}
+            </div>
+            <form action="{{ url_for('make_order_served', order_id=order.id) }}" method="post">
+                <button class="waiterconf" type="submit">Mark as Served</button>
+            </form>
+        </div>
         {% endfor %}
-
-        <form action="{{ url_for('make_order_served', order_id=order.id) }}" method="post">
-            <button type="submit">Mark as Served</button>
-        </form>
-
-        <br><br>
-    {% endfor %}
+    </div>
+    <footer id="footreddd">
+    </footer>
 </body>
 </html>
