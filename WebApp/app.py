@@ -364,7 +364,6 @@ def update_order_status():
             if not order_found:
                 return jsonify({"success": False, "message": "Order not found"}), 404
 
-            # Save updated orders back to the file
             file.seek(0)
             file.truncate()
             json.dump(current_orders, file, indent=4)
@@ -375,4 +374,3 @@ def update_order_status():
         return jsonify({"success": False, "message": "Could not update order status"}), 500
 if __name__ == '__main__':
     app.run(host= '0.0.0.0',port=8080, debug=True)
-    change_order_status("955ab1f7-c155-435b-8909-ca6dd3f8adbd")
