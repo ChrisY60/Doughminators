@@ -304,7 +304,7 @@
             }
         ],
         "totalPrice": 19.5,
-        "status": "TO DO"
+        "status": "READY FOR SERVING"
     },
     {
         "id": "2765fe0e-f0a7-4530-8f96-5ade7a934298",
@@ -391,6 +391,36 @@
             }
         ],
         "totalPrice": 10.0,
+        "status": "TO DO"
+    },
+    {
+        "id": "02104a7c-3f06-4931-aa05-60e4a38a8610",
+        "table": "1",
+        "datetime": "2024-11-04 12:46:31.557278",
+        "products": [
+            {
+                "name": "Cola-Coca",
+                "price": 2.0,
+                "description": "Refreshing Coke",
+                "imageURL": "../static/images/cola.png",
+                "milliliters": 500
+            },
+            {
+                "name": "Orange Juice",
+                "price": 3.0,
+                "description": "Freshly squeezed orange juice",
+                "imageURL": "../static/images/orange-juice.png",
+                "milliliters": 400
+            },
+            {
+                "name": "Sparkling Water",
+                "price": 2.0,
+                "description": "Bubbly mineral water",
+                "imageURL": "../static/images/sparkling-water.png",
+                "milliliters": 500
+            }
+        ],
+        "totalPrice": 7.0,
         "status": "TO DO"
     }
 ]

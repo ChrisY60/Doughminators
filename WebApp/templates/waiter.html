@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Waiter</title>
+    <link rel="stylesheet" href="../static/stylesheet.css">
+</head>
+<body>
+    <h1>Orders to Serve</h1>
+    {% for order in ready_to_serve_orders %}
+        <h2>Table: {{ order.table }}</h2>
+        {% for product in order.products %}
+            <h3>{{ product.name }}</h3>
+        {% endfor %}
+
+        <form action="{{ url_for('make_order_served', order_id=order.id) }}" method="post">
+            <button type="submit">Mark as Served</button>
+        </form>
+
+        <br><br>
+    {% endfor %}
+</body>
+</html>

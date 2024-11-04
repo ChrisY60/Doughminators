@@ -78,6 +78,42 @@ def update_cart(order_data):
 toppings, pizzas, beverages = load_data()
 
 
+def change_order_status(order_id, status):
+    try:
+        with open('data/currentOrders.json', 'r') as file:
+            current_orders = json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        current_orders = []
+
+    order_found = False
+    for order in current_orders:
+        if order["id"] == order_id:
+            order["status"] = status
+            order_found = True
+            break
+
+    if order_found:
+        with open('data/currentOrders.json', 'w') as file:
+            json.dump(current_orders, file, indent=4)
+        return True
+    else:
+        return False
+
+def remove_order_from_file(order_id):
+    try:
+        with open('data/currentOrders.json', 'r') as file:
+            current_orders = json.load(file)
+
+        current_orders = [order for order in current_orders if order["id"] != order_id]
+
+        with open('data/currentOrders.json', 'w') as file:
+            json.dump(current_orders, file, indent=4)
+
+        return True
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print(f"Error removing order {order_id}: {e}")
+        return False
+
 
 @app.route('/')
 def home():
@@ -247,6 +283,33 @@ def cart():
         print(f"Error loading orders: {e}")
         return jsonify({"error": "Could not load orders."}), 500
 
+@app.route("/waiterTab")
+def waiterTab():
+    ready_to_serve_orders = []
+    try:
+        with open('data/currentOrders.json', 'r') as file:
+            current_orders = json.load(file)
+            for order in current_orders:
+                if order.get("status") == "READY FOR SERVING":
+                    ready_to_serve_orders.append(order)
+
+    except (FileNotFoundError, json.JSONDecodeError):
+        pass
+
+    return render_template("waiter.html", ready_to_serve_orders=ready_to_serve_orders)
+
+@app.route("/makeOrderServed/<order_id>", methods=['POST'])
+def make_order_served(order_id):
+    if change_order_status(order_id, "SERVED"):
+        remove_order_from_file(order_id)
+        message = f"Order {order_id} marked as served and removed successfully."
+    else:
+        message = f"Failed to mark order {order_id} as served."
+
+    return redirect("/waiterTab", code=302)
+
+
+
 @app.route("/pizzaInformation")
 @app.route("/pizzaInformation/<pizza_name>")
 def pizza_information(pizza_name):
@@ -281,3 +344,4 @@ def remove_item():
 
 if __name__ == '__main__':
     app.run(host= '0.0.0.0',port=8080, debug=True)
+    change_order_status("955ab1f7-c155-435b-8909-ca6dd3f8adbd")
