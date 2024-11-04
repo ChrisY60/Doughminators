@@ -42,7 +42,6 @@
     </main>
     <footer id="footredd">
     </footer>
-
     <script>
         function toggleSearchBar() {
             const searchInput = document.getElementById('beverage-search-input');
@@ -59,7 +58,7 @@
 
         function searchBeverage() {
             const searchInput = document.getElementById('beverage-search-input').value.toLowerCase();
-            const beverageItems = document.querySelectorAll('#beverageList .menu-item');
+            const beverageItems = document.querySelectorAll('#beverageList .menu-itemss');
 
             beverageItems.forEach(item => {
                 const beverageName = item.querySelector('h2').textContent.toLowerCase();
