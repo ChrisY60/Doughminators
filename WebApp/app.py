@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request,session, redirect
 import json
 import os
 import random
@@ -78,9 +78,16 @@ def update_cart(order_data):
 toppings, pizzas, beverages = load_data()
 
 
-@app.route("/")
-def index():
-    return render_template('home.html')
+
+@app.route('/')
+def home():
+    # Check if the table_id is in the query string
+    table_id = request.args.get('table_id')
+    if table_id:
+        session['table_id'] = table_id  # Store the table ID in the session
+
+    # Continue rendering the home page (or whatever you want to do)
+    return render_template('home.html')  # Render your home page template
 
 @app.route("/pizza")
 def pizza_page():
@@ -107,11 +114,14 @@ def pizza_page():
 def beverages_page():
     return render_template('beverages.html', beverages=[beverage.to_dict() for beverage in beverages])
 
-@app.route("/makeOrder")
+
+@app.route("/makeOrder", methods=['GET','POST'])
 def make_order():
-    selected_pizza = random.choice(pizzas)
-    selected_beverage = random.choice(beverages)
-    items = [selected_pizza, selected_beverage]
+    # Retrieve the table ID from the session
+    table_id = session.get('table_id')
+    if not table_id:
+        return jsonify({"error": "Table ID not found."}), 400
+
     try:
         with open('cart.json', 'r') as file:
             cart = json.load(file)
@@ -129,8 +139,7 @@ def make_order():
                 crust=item['crust'],
                 base=item['base'],
                 size=item['size'],
-                toppings=[Topping(topping['name'], topping['price'], topping['description']) for topping in
-                          item.get('toppings', [])]
+                toppings=[Topping(topping['name'], topping['price'], topping['description']) for topping in item.get('toppings', [])]
             )
             products.append(pizza)
         elif 'milliliters' in item:
@@ -142,8 +151,11 @@ def make_order():
                 milliliters=item['milliliters']
             )
             products.append(beverage)
+
     total_price = sum(product.price for product in products)
-    order = Order(4, products, total_price)
+
+    # Save order with table ID
+    order = Order(table_id, products, total_price)
 
     try:
         with open('data/currentOrders.json', 'r') as file:
@@ -160,7 +172,6 @@ def make_order():
         json.dump([], file, indent=4)
 
     return render_template("OrderConfirmed.html", items=products, total_price=order.totalPrice)
-
 @app.route("/getOrdersForKitchen")
 def get_orders_for_kitchen():
     to_do_orders = []
@@ -253,4 +264,4 @@ def remove_item():
         return jsonify({"success": False}), 500
 
 if __name__ == '__main__':
-    app.run(port=8080, debug=True)
+    app.run(host= '0.0.0.0',port=8080, debug=True)

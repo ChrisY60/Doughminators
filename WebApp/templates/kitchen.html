@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitchen Orders Status</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/stylesheet.css">
 </head>
 <body>
-    <div class="border"></div>
-    <div class="container">
-        <div class="column waiting-list">
+    <div class="border1"></div>
+    <div class="container1">
+        <div class="column1 waiting-list">
             <h2>Waiting List</h2>
         </div>
-        <div class="column in-process">
+        <div class="column1 in-process">
             <h2>In Process</h2>
         </div>
-        <div class="column ready">
+        <div class="column1 ready">
             <h2>Ready</h2>
         </div>
     </div>
-    <div class="borderline"></div>
+    <div class="borderline1"></div>
     <div class="container2">
         <div class="column2 waiting-list" id="waiting-list-items">
             {% for order in to_do_orders %}
