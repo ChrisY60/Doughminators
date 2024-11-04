@@ -21,13 +21,13 @@
     </header>
     <main>
         <div class="menu-header">
-            <h1>Beverages Menu</h1>
-            <img class="search-iconn" src="../static/images/seachi.jpg" alt="Search" onclick="toggleSearchBar()">
+            <h1 id="bevmenu1">Beverages Menu</h1>
+            <img class="search-icon" src="../static/images/seachi.jpg" alt="Search" onclick="toggleSearchBar()">
             <input type="text" id="beverage-search-input" placeholder="Search for a beverage..." onkeyup="searchBeverage()" style="display: none;">
         </div>
         <ul id="beverageList">
             {% for beverage in beverages %}
-                <li class="menu-item">
+                <li class="menu-itemss">
                     {% if beverages_quantity[beverage.name]%}
                         <div class="quantity-indicator">{{ beverages_quantity[beverage.name] }}</div>
                     {% endif %}
@@ -42,7 +42,6 @@
     </main>
     <footer id="footredd">
     </footer>
-
     <script>
         function toggleSearchBar() {
             const searchInput = document.getElementById('beverage-search-input');
@@ -59,7 +58,7 @@
 
         function searchBeverage() {
             const searchInput = document.getElementById('beverage-search-input').value.toLowerCase();
-            const beverageItems = document.querySelectorAll('#beverageList .menu-item');
+            const beverageItems = document.querySelectorAll('#beverageList .menu-itemss');
 
             beverageItems.forEach(item => {
                 const beverageName = item.querySelector('h2').textContent.toLowerCase();

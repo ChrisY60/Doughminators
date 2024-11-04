@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="1">
     <title>Kitchen Orders Status</title>
     <link rel="stylesheet" href="../static/stylesheet.css">
 </head>
@@ -23,27 +24,77 @@
     <div class="container2">
         <div class="column2 waiting-list" id="waiting-list-items">
             {% for order in to_do_orders %}
-                <p>Table: {{ order.table }}<br>
-                   Products: {% for product in order.products %}{{ product.name }}{% if not loop.last %}, {% endif %}{% endfor %}
-                </p>
+                <div class="order" data-id="{{ order.id }}" onclick="moveOrder(this, 'in-process-items')">
+                    <p>Table: {{ order.table }}<br>
+                       Products: {% for product in order.products %}{{ product.name }}{% if not loop.last %}, {% endif %}{% endfor %}
+                    </p>
+                </div>
             {% endfor %}
         </div>
-
+        
         <div class="column2 in-process" id="in-process-items">
             {% for order in cooking_orders %}
-                <p>Table: {{ order.table }}<br>
-                   Products: {% for product in order.products %}{{ product.name }}{% if not loop.last %}, {% endif %}{% endfor %}
-                </p>
+                <div class="order" data-id="{{ order.id }}" onclick="moveOrder(this, 'ready-items')">
+                    <p>Table: {{ order.table }}<br>
+                       Products: {% for product in order.products %}{{ product.name }}{% if not loop.last %}, {% endif %}{% endfor %}
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+        
+        <div class="column2 ready" id="ready-items">
+            {% for order in ready_to_serve_orders %}
+                <div class="order" data-id="{{ order.id }}">
+                    <p>Table: {{ order.table }}<br>
+                     Products: {% for product in order.products %}{{ product.name }}{% if not loop.last %}, {% endif %}{% endfor %}
+                    </p>
+                </div>
             {% endfor %}
         </div>
 
-        <div class="column2 ready" id="ready-items">
-            {% for order in ready_to_serve_orders %}
-                <p>Table: {{ order.table }}<br>
-                   Products: {% for product in order.products %}{{ product.name }}{% if not loop.last %}, {% endif %}{% endfor %}
-                </p>
-            {% endfor %}
-        </div>
-    </div>
+    <script>
+       function moveOrder(orderElement, targetColumnId) {
+            const orderId = orderElement.getAttribute('data-id'); // Unique order ID from data attribute
+            let newStatus;
+
+            // Determine new status based on the target column
+            if (targetColumnId === 'in-process-items') {
+                newStatus = 'COOKING';  // This is where the order starts cooking
+                orderElement.setAttribute('onclick', "moveOrder(this, 'ready-items')");
+            } else if (targetColumnId === 'ready-items') {
+                newStatus = 'READY FOR SERVING';
+                // No action needed for ready items since they are not clickable
+            } else if (targetColumnId === 'remove') {
+                newStatus = 'SERVED';
+                orderElement.parentElement.removeChild(orderElement); // Remove from DOM as it's served
+            }
+
+            // Move the order element visually
+            if (targetColumnId !== 'remove') {
+                const targetColumn = document.getElementById(targetColumnId);
+                targetColumn.appendChild(orderElement);
+            }
+
+            // Send a request to update the order status in the backend
+            fetch('/update-order-status', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: orderId,
+                    status: newStatus
+                })
+            }).then(response => response.json())
+              .then(data => {
+                  if (!data.success) {
+                      console.error('Failed to update order status:', data.message);
+                  } else {
+                      console.log(`Order ${orderId} status updated to ${newStatus}`);
+                  }
+              })
+              .catch(error => console.error('Error updating order status:', error));
+        }
+    </script>
 </body>
 </html>

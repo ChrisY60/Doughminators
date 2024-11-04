@@ -341,7 +341,38 @@ def remove_item():
     except Exception as e:
         print(f"Error removing item: {e}")
         return jsonify({"success": False}), 500
+    
 
+@app.route('/update-order-status', methods=['POST'])
+def update_order_status():
+    order_id = request.json.get("id")
+    new_status = request.json.get("status")
+
+    try:
+        # Load current orders
+        with open('data/currentOrders.json', 'r+') as file:
+            current_orders = json.load(file)
+            
+            # Find the order by ID and update its status
+            order_found = False
+            for order in current_orders:
+                if order["id"] == order_id:
+                    order["status"] = new_status
+                    order_found = True
+                    break
+
+            if not order_found:
+                return jsonify({"success": False, "message": "Order not found"}), 404
+
+            # Save updated orders back to the file
+            file.seek(0)
+            file.truncate()
+            json.dump(current_orders, file, indent=4)
+
+        return jsonify({"success": True, "message": "Order status updated!"})
+    except Exception as e:
+        print(f"Error updating order status: {e}")
+        return jsonify({"success": False, "message": "Could not update order status"}), 500
 if __name__ == '__main__':
     app.run(host= '0.0.0.0',port=8080, debug=True)
     change_order_status("955ab1f7-c155-435b-8909-ca6dd3f8adbd")
