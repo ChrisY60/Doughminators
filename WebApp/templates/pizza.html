@@ -22,9 +22,7 @@
     <main>
         <div class="menu-header">
             <h1>Pizza Menu</h1>
-   
             <img class="search-iconn" src="../static/images/seachi.jpg" alt="Search" onclick="toggleSearchBar()">
-        
             <input type="text" id="search-input" placeholder="Search for a pizza..." onkeyup="searchPizza()" style="display: none;">
         </div>
         <div class="menu-items">
@@ -39,7 +37,8 @@
                         <h2 class="pizza-name">{{ pizza.name }}</h2>
                         <p>{{ pizza.description }}</p>
                         <p>Price: €{{ pizza.price }}</p>
-                        <button onclick="addToOrder('{{ pizza.name }}', '{{ pizza.price }}')">Add to Order</button>  </li>
+                        <button onclick="addToOrder('{{ pizza.name }}', '{{ pizza.price }}')">Add to Order</button>
+                    </li>
                 {% endfor %}
             </ul>
         </div>
@@ -50,7 +49,6 @@
     <script>
         function toggleSearchBar() {
             const searchInput = document.getElementById('search-input');
-
 
             if (searchInput.style.display === "none" || searchInput.style.display === "") {
                 searchInput.style.display = "block";
@@ -68,23 +66,9 @@
 
             pizzaItems.forEach(item => {
                 const pizzaName = item.querySelector('.pizza-name').textContent.toLowerCase();
-                if (pizzaName.includes(searchInput)) {
-                    item.style.display = "";
-                } else {
-                    item.style.display = "none";
-                }
+                item.style.display = pizzaName.includes(searchInput) ? "" : "none";
             });
         }
     </script>
 </body>
-<script>
-    window.addEventListener('load', () => {
-        const scrollPosition = localStorage.getItem('scrollPosition');
-        if (scrollPosition) {
-            window.scrollTo(0, parseInt(scrollPosition, 10));
-            localStorage.removeItem('scrollPosition');
-        }
-    });
-</script>
-
 </html>
