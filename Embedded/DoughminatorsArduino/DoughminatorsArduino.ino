@@ -10,6 +10,7 @@ void setup() {
   pinMode(starButtonPin, INPUT_PULLUP);
   pinMode(buzzerPin, OUTPUT);
   pinMode(redLEDPin, OUTPUT);
+  pinMode(greenLEDPin, OUTPUT);
 }
 
 void bakeAPizza() {
@@ -44,9 +45,12 @@ void ringBuzzer() {
 
 void loop() {
   digitalWrite(greenLEDPin, HIGH);
-  if(digitalRead(starButtonPin) == LOW){
-    digitalWrite(greenLEDPin, LOW);
-    bakeAPizza();
-    delay(400);
-  }
+    if (Serial.available() > 0) { // Check if data is available to read
+        String command = Serial.readStringUntil('\n'); // Read command
+        if (command == "START_BAKING") { // If command is to start baking
+            digitalWrite(greenLEDPin, LOW); // Turn off green LED
+            bakeAPizza(); // Start baking process
+            delay(400);
+        }
+    }
 }

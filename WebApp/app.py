@@ -1,7 +1,8 @@
 from flask import Flask, render_template, jsonify, request,session, redirect
 import json
 import os
-import random
+import serial
+import time
 import uuid
 from datetime import datetime
 from Classes.Topping import Topping
@@ -13,7 +14,8 @@ from Classes.Order import Order
 app = Flask(__name__)
 app.secret_key = 'DoughminatorsKey'
 
-
+arduino = serial.Serial('COM5', 9600, timeout=1)
+time.sleep(2)
 
 def load_data():
     with open("data/toppings.json") as f:
@@ -359,11 +361,16 @@ def update_order_status():
                 if order["id"] == order_id:
                     order["status"] = new_status
                     order_found = True
+                    
+                    # Send command to Arduino if the order is now cooking
+                    if new_status == "COOKING":
+                        arduino.write(b'START_BAKING\n')  # Adjust this to the command your Arduino expects
                     break
 
             if not order_found:
                 return jsonify({"success": False, "message": "Order not found"}), 404
 
+            # Save updated orders back to the file
             file.seek(0)
             file.truncate()
             json.dump(current_orders, file, indent=4)
@@ -373,4 +380,4 @@ def update_order_status():
         print(f"Error updating order status: {e}")
         return jsonify({"success": False, "message": "Could not update order status"}), 500
 if __name__ == '__main__':
-    app.run(host= '0.0.0.0',port=8080, debug=True)
+    app.run(host= '0.0.0.0',port=8080, debug=True, use_reloader = False)
