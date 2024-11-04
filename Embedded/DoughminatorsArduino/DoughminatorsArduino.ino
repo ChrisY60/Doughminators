@@ -23,9 +23,10 @@ void bakeAPizza() {
     delay(1000);
     remaining_seconds -= 1;
   }
-  Serial.println("Ready");
+
   digitalWrite(redLEDPin, LOW);
   ringBuzzer();
+  Serial.println("BAKING_COMPLETE");
 }
 
 void ringBuzzer() {
@@ -45,11 +46,11 @@ void ringBuzzer() {
 
 void loop() {
   digitalWrite(greenLEDPin, HIGH);
-    if (Serial.available() > 0) { // Check if data is available to read
-        String command = Serial.readStringUntil('\n'); // Read command
-        if (command == "START_BAKING") { // If command is to start baking
-            digitalWrite(greenLEDPin, LOW); // Turn off green LED
-            bakeAPizza(); // Start baking process
+    if (Serial.available() > 0) {
+        String command = Serial.readStringUntil('\n');
+        if (command == "START_BAKING") {
+            digitalWrite(greenLEDPin, LOW);
+            bakeAPizza();
             delay(400);
         }
     }

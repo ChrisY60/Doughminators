@@ -10,11 +10,12 @@ from Classes.Product import Product
 from Classes.Pizza import Pizza
 from Classes.Beverage import Beverage
 from Classes.Order import Order
+import threading
 
 app = Flask(__name__)
 app.secret_key = 'DoughminatorsKey'
 
-arduino = serial.Serial('COM5', 9600, timeout=1)
+arduino = serial.Serial('COM3', 9600, timeout=1)
 time.sleep(2)
 
 def load_data():
@@ -354,23 +355,20 @@ def update_order_status():
         # Load current orders
         with open('data/currentOrders.json', 'r+') as file:
             current_orders = json.load(file)
-            
-            # Find the order by ID and update its status
+
             order_found = False
             for order in current_orders:
                 if order["id"] == order_id:
                     order["status"] = new_status
                     order_found = True
-                    
-                    # Send command to Arduino if the order is now cooking
+
                     if new_status == "COOKING":
-                        arduino.write(b'START_BAKING\n')  # Adjust this to the command your Arduino expects
+                        arduino.write(b'START_BAKING\n')
                     break
 
             if not order_found:
                 return jsonify({"success": False, "message": "Order not found"}), 404
 
-            # Save updated orders back to the file
             file.seek(0)
             file.truncate()
             json.dump(current_orders, file, indent=4)
@@ -379,5 +377,35 @@ def update_order_status():
     except Exception as e:
         print(f"Error updating order status: {e}")
         return jsonify({"success": False, "message": "Could not update order status"}), 500
+
+def monitor_arduino():
+    while True:
+        if arduino.in_waiting > 0:
+            message = arduino.readline().decode().strip()
+            if message == "BAKING_COMPLETE":
+                update_order_to_ready_for_serving()
+
+def update_order_to_ready_for_serving():
+    try:
+        with open('data/currentOrders.json', 'r+') as file:
+            current_orders = json.load(file)
+
+            for order in current_orders:
+                if order.get("status") == "COOKING":
+                    order["status"] = "READY FOR SERVING"
+                    break
+
+            file.seek(0)
+            file.truncate()
+            json.dump(current_orders, file, indent=4)
+
+        print("Order status updated to READY FOR SERVING")
+    except Exception as e:
+        print(f"Error updating order status: {e}")
+
+
+arduino_monitor_thread = threading.Thread(target=monitor_arduino, daemon=True)
+arduino_monitor_thread.start()
+
 if __name__ == '__main__':
     app.run(host= '0.0.0.0',port=8080, debug=True, use_reloader = False)
