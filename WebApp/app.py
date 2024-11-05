@@ -225,8 +225,7 @@ def make_order():
 
     with open('cart.json', 'w') as file:
         json.dump([], file, indent=4)
-    order.totalPrice = order.update_totalPrice()
-    print(order.totalPrice)
+
     return render_template("OrderConfirmed.html", items=products, total_price=order.totalPrice)
 @app.route("/getOrdersForKitchen")
 def get_orders_for_kitchen():

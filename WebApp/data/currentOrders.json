@@ -245,7 +245,7 @@
             }
         ],
         "totalPrice": 46.0,
-        "status": "TO DO"
+        "status": "READY FOR SERVING"
     },
     {
         "id": "01b4f880-1703-48ce-82c5-d0cd007907e8",
@@ -359,6 +359,47 @@
             }
         ],
         "totalPrice": 40.5,
+        "status": "TO DO"
+    },
+    {
+        "id": "dd0a4b1f-d3ab-4dce-87b5-323c2537c12a",
+        "table": "1",
+        "datetime": "2024-11-05 13:23:18.947179",
+        "products": [
+            {
+                "name": "Margherita",
+                "price": 8.0,
+                "description": "Classic cheese and tomato pizza",
+                "imageURL": "/static/images/margherita.jpg",
+                "crust": "thin",
+                "base": "tomato",
+                "size": "medium",
+                "toppings": [
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            },
+            {
+                "name": "Margherita",
+                "price": 8.0,
+                "description": "Classic cheese and tomato pizza",
+                "imageURL": "/static/images/margherita.jpg",
+                "crust": "thin",
+                "base": "tomato",
+                "size": "medium",
+                "toppings": [
+                    {
+                        "name": "Extra Cheese",
+                        "price": 1.0,
+                        "description": "Mozzarella cheese"
+                    }
+                ]
+            }
+        ],
+        "totalPrice": 16.0,
         "status": "TO DO"
     }
 ]

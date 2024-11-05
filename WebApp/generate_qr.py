@@ -3,7 +3,7 @@ import os
 
 def generate_qr_codes(num_tables):
     os.makedirs("qr_codes", exist_ok=True)
-    base_url = "http://145.93.165.134:8080?table_id="  # Adjust for your server URL
+    base_url = "http://145.93.164.237:8080?table_id="  # Adjust for your server URL
 
     for table_id in range(1, num_tables + 1):
         url = f"{base_url}{table_id}"
