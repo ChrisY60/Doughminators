@@ -225,7 +225,8 @@ def make_order():
 
     with open('cart.json', 'w') as file:
         json.dump([], file, indent=4)
-
+    order.totalPrice = order.update_totalPrice()
+    print(order.totalPrice)
     return render_template("OrderConfirmed.html", items=products, total_price=order.totalPrice)
 @app.route("/getOrdersForKitchen")
 def get_orders_for_kitchen():
@@ -271,6 +272,7 @@ def cart():
             orders = []
 
         enriched_orders = []
+        total_price = 0
         for order in orders:
             item_name = order.get("name")
             matching_item = next((pizza for pizza in pizzas if pizza.name == item_name), None) or \
@@ -279,9 +281,10 @@ def cart():
             if matching_item:
                 order["imageURL"] = matching_item.imageURL
                 order["description"] = matching_item.description
+                total_price += matching_item.price
             enriched_orders.append(order)
 
-        return render_template('cart.html', items=enriched_orders)
+        return render_template('cart.html', items=enriched_orders, total_price=total_price)
     except Exception as e:
         print(f"Error loading orders: {e}")
         return jsonify({"error": "Could not load orders."}), 500

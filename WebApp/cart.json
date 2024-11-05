@@ -1,1 +1,43 @@
-[]
+[
+  {
+    "name": "Margherita",
+    "price": 8.0,
+    "id": "a1c57e62-cc28-4340-ad35-ee954a701d48",
+    "imageURL": "/static/images/margherita.jpg",
+    "description": "Classic cheese and tomato pizza",
+    "crust": "thin",
+    "base": "tomato",
+    "size": "medium",
+    "toppings": [
+      {
+        "name": "Extra Cheese",
+        "price": 1.0,
+        "description": "Mozzarella cheese"
+      }
+    ]
+  },
+  {
+    "name": "Cola-Coca",
+    "price": 2.0,
+    "id": "7d1ac33b-298e-4e5b-a67a-bbed3a58272b",
+    "imageURL": "../static/images/cola.png",
+    "description": "Refreshing Coke",
+    "milliliters": 500
+  },
+  {
+    "name": "Cola-Coca",
+    "price": 2.0,
+    "id": "5bfc5fce-e5f5-4618-aec4-8d364736a49a",
+    "imageURL": "../static/images/cola.png",
+    "description": "Refreshing Coke",
+    "milliliters": 500
+  },
+  {
+    "name": "Cola-Coca",
+    "price": 2.0,
+    "id": "f69b70d1-6106-4264-a760-b740b986d49b",
+    "imageURL": "../static/images/cola.png",
+    "description": "Refreshing Coke",
+    "milliliters": 500
+  }
+]
