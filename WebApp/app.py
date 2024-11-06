@@ -15,7 +15,7 @@ import threading
 app = Flask(__name__)
 app.secret_key = 'DoughminatorsKey'
 
-arduino = serial.Serial('COM3', 9600, timeout=1)
+arduino = serial.Serial('COM4', 9600, timeout=1)
 time.sleep(2)
 
 def load_data():
@@ -120,14 +120,11 @@ def remove_order_from_file(order_id):
 
 @app.route('/')
 def home():
-    # Check if the table_id is in the query string
     table_id = request.args.get('table_id')
     if table_id:
-        session['table_id'] = table_id  # Store the table ID in the session
+        session['table_id'] = table_id 
 
-    # Continue rendering the home page (or whatever you want to do)
-    return render_template('home.html')  # Render your home page template
-
+    return render_template('home.html') 
 @app.route("/pizza")
 def pizza_page():
     try:
@@ -172,7 +169,6 @@ def beverages_page():
 
 @app.route("/makeOrder", methods=['GET','POST'])
 def make_order():
-    # Retrieve the table ID from the session
     table_id = session.get('table_id')
     if not table_id:
         return jsonify({"error": "Table ID not found."}), 400
@@ -209,7 +205,6 @@ def make_order():
 
     total_price = sum(product.price for product in products)
 
-    # Save order with table ID
     order = Order(table_id, products, total_price)
 
     try:
@@ -354,7 +349,6 @@ def update_order_status():
     new_status = request.json.get("status")
 
     try:
-        # Load current orders
         with open('data/currentOrders.json', 'r+') as file:
             current_orders = json.load(file)
 

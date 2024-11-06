@@ -54,28 +54,26 @@
 
     <script>
        function moveOrder(orderElement, targetColumnId) {
-            const orderId = orderElement.getAttribute('data-id'); // Unique order ID from data attribute
+            const orderId = orderElement.getAttribute('data-id');
             let newStatus;
 
-            // Determine new status based on the target column
             if (targetColumnId === 'in-process-items') {
-                newStatus = 'COOKING';  // This is where the order starts cooking
+                newStatus = 'COOKING'; 
                 orderElement.setAttribute('onclick', "moveOrder(this, 'ready-items')");
             } else if (targetColumnId === 'ready-items') {
                 newStatus = 'READY FOR SERVING';
-                // No action needed for ready items since they are not clickable
+
             } else if (targetColumnId === 'remove') {
                 newStatus = 'SERVED';
-                orderElement.parentElement.removeChild(orderElement); // Remove from DOM as it's served
+                orderElement.parentElement.removeChild(orderElement);
             }
 
-            // Move the order element visually
             if (targetColumnId !== 'remove') {
                 const targetColumn = document.getElementById(targetColumnId);
                 targetColumn.appendChild(orderElement);
             }
 
-            // Send a request to update the order status in the backend
+
             fetch('/update-order-status', {
                 method: 'POST',
                 headers: {
